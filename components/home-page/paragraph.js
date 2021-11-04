@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export const Paragraph = ({ delayDuration, paragraphContent }) => {
   return (
-    <motion.div className="mt-8">
+    <motion.div className="mt-4">
       <p
         className="text-lg"
         initial={{ y: 60, opacity: 0 }}
