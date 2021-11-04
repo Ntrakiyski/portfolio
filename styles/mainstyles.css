@@ -1,0 +1,91 @@
+/*  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Title font */
+@import url("https://fonts.googleapis.com/css2?family=Oxygen+Mono&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* Body font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
+body {
+  font-family: "Roboto Slab", serif;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.hamburger {
+  position: absolute;
+  z-index: 9999999999;
+  background: linear-gradient(
+    134.42deg,
+    rgba(16, 36, 47, 0.38) 9.6%,
+    rgba(5, 23, 33, 0.38) 96.46%
+  );
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+  bottom: 40px;
+  right: 20px;
+}
+.CTA {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 80px;
+}
+.mainBtn {
+  padding: 10px 20px;
+  width: 250px;
+  text-align: center;
+  background: rgba(77, 163, 132, 1);
+  filter: drop-shadow(0px 0px 7px #1f4559);
+  color: white;
+}
+
+h1 {
+  font-size: 32px;
+  font-family: "Oxygen Mono", monospace;
+}
+
+.cursor {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0px;
+  pointer-events: none;
+}
+.links {
+  border: 2px solid red;
+  content: "Preview";
+  width: 40px;
+  height: 40px;
+  transition: all 0.3s linear;
+}
+
+@keyframes cursorAnim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+.expand {
+  animation: cursorAnim 0.8s forwards;
+}
