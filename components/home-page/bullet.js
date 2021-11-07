@@ -1,12 +1,23 @@
 import { motion } from "framer-motion";
+import styled from "styled-components";
 import Image from "next/image";
 
-export const Bullet = ({ imgSrc, bulletContent, additClass }) => {
-  let addClass = `text-lg ${additClass} ml-3`;
+import placeholderIMG from "../../public/assets/images/placeholderIMG.png";
+
+export const Bullet = ({ imgSRC, bulletContent, colorSRC }) => {
   return (
-    <div className="flex items-center">
-      <Image src={imgSrc} width={22} height={22} placeholder="blur" />
-      <p className={addClass}>{bulletContent}</p>
-    </div>
+    <Styles>
+      <Image src={imgSRC ? imgSRC : placeholderIMG} width={50} height={50} />
+      <h2 style={{ color: colorSRC ? colorSRC : "white" }}>{bulletContent}</h2>
+    </Styles>
   );
 };
+
+const Styles = styled.div`
+  display: flex;
+  align-items: flex-start;
+  padding-top: 90px;
+  h2 {
+    margin-left: 10px;
+  }
+`;

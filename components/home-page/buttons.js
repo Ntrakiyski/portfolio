@@ -1,14 +1,29 @@
 import { motion } from "framer-motion";
+import styled from "styled-components";
+
+import {
+  colorGrey,
+} from "../../styles/Variables/variables.module.scss";
+
 
 export const Buttons = () => {
   return (
-    <div className="CTA mb-20 absolute bottom-0 left-0">
-      <span className="cursor-pointer hover:text-whitefont transition-all">
-        Contact with me
-      </span>
-      <div className="mainBtn cursor-pointer hover:bg-darkgreen text-background transition-all ">
-        Preview projects
-      </div>
-    </div>
+    <Styles className="CTA-btns">
+      <span className="secndBtn">Contact with me</span>
+      <div className="mainBtn">Preview projects</div>
+    </Styles>
   );
 };
+
+const Styles = styled.div`
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  .secndBtn{
+    cursor:pointer;
+    color:${colorGrey};
+  }
+  .mainBtn{
+    cursor:pointer;
+  }
+`;

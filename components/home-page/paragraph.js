@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
+import styled from "styled-components";
 
 export const Paragraph = ({ delayDuration, paragraphContent }) => {
   return (
-    <motion.div className="mt-4">
-      <p
-        className="text-lg"
+    <Styles>
+      <h5
         initial={{ y: 60, opacity: 0 }}
         animate={{
           y: 0,
@@ -16,7 +16,11 @@ export const Paragraph = ({ delayDuration, paragraphContent }) => {
         }}
       >
         {paragraphContent}
-      </p>
-    </motion.div>
+      </h5>
+    </Styles>
   );
 };
+const Styles = styled.div`
+  margin-bottom: 30px;
+
+`;

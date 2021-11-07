@@ -1,11 +1,11 @@
 import Head from "next/head";
-import { Landing } from "../components/home-page/landing";
+import { Hero } from "../components/sections/Hero";
+import { GoodAt } from "../components/sections/GoodAt";
 
 import useInView from "react-cool-inview";
 import dynamic from "next/dynamic";
 const Projects = dynamic(() => import("../components/home-page/projects"));
 
-import { Cursor } from "../components/global/cursor";
 import { Navbar } from "../components/global/navbar";
 
 export default function Home() {
@@ -19,37 +19,36 @@ export default function Home() {
   return (
     <div className="bg-background text-greyfont">
       <Head>
-        <title>Trakiyski`s Portfolio</title>
+        <title>Trakiyski`s Portfolio, </title>
         <meta
           name="description"
           content="Nikolay Trakiyski`s personal website"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      {/* Navigation */}
       <nav>
         <Navbar />
       </nav>
+
+      {/* Main content */}
       <main>
-        <Cursor />
-        <Landing />
+        <Hero />
+
+        <GoodAt />
         {/* <div ref={observe}>{inView && <Projects />}</div> */}
       </main>
 
+      {/* Footer */}
       <footer></footer>
     </div>
   );
 }
 
-// import axios from "axios";
-
-// //create component with pre-generated data from the function below
-// function Component({ data }) {
-//   return <></>;
-// }
-
 // //get the data from the api
 // export async function getStaticProps() {
-//   const { data } = await axios.get("http://localhost:3000/api/projects");
+//   const { data } = await axios.get("http://localhost:3000/api/homepage");
 
 //   return {
 //     props: {
