@@ -4,7 +4,8 @@ import { GoodAt } from "../components/sections/GoodAt";
 
 import useInView from "react-cool-inview";
 import dynamic from "next/dynamic";
-const Projects = dynamic(() => import("../components/home-page/projects"));
+// const Projects = dynamic(() => import("../components/sections/projects"));
+import { Projects } from "../components/sections/Projects";
 
 import { Navbar } from "../components/global/navbar";
 
@@ -37,6 +38,7 @@ export default function Home() {
         <Hero />
 
         <GoodAt />
+        <Projects />
         {/* <div ref={observe}>{inView && <Projects />}</div> */}
       </main>
 
