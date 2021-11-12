@@ -20,7 +20,7 @@ const Styles = styled.div`
     rgba(16, 36, 47, 0.38) 9.6%,
     rgba(5, 23, 33, 0.38) 96.46%
   );
-  color: orange;
+  color: #f0af5e;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   bottom: 40px;
   right: 20px;

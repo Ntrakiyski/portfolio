@@ -4,7 +4,7 @@ import Image from "next/image";
 import placeholderIMGbig from "../../public/assets/images/placeholderIMGbig.png";
 import placeholderIMG from "../../public/assets/images/placeholderIMG.png";
 
-export const ProjectThumbnail = ({
+function ProjectThumbnail({
   banner,
   tool1,
   tool2,
@@ -12,7 +12,7 @@ export const ProjectThumbnail = ({
   title,
   role1,
   role2,
-}) => {
+}) {
   return (
     <Styles>
       <Image
@@ -34,7 +34,7 @@ export const ProjectThumbnail = ({
       </div>
     </Styles>
   );
-};
+}
 
 const Styles = styled.div`
   width: 100%;
@@ -75,3 +75,5 @@ const Styles = styled.div`
     }
   }
 `;
+
+export default ProjectThumbnail;

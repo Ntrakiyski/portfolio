@@ -12,9 +12,11 @@
 /* Body font */
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 body {
-  padding: 18px;
   font-family: "Roboto Slab", serif;
   background: $bg-color-dark;
+}
+main {
+  padding: 18px;
 }
 
 h1 {
@@ -31,7 +33,7 @@ h2 {
 h3 {
   font-size: $h3;
   font-weight: $h3-w;
-  color: $color-white;
+  color: rgb(177, 177, 177);
 }
 h4 {
   font-size: $h4;

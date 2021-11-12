@@ -1,5 +1,7 @@
 import styled from "styled-components";
-import { ProjectThumbnail } from "../home-page/projectThumbnail";
+import { motion } from "framer-motion";
+
+import ProjectThumbnail from "../home-page/projectThumbnail";
 
 import { Title } from "../global/title";
 
@@ -15,7 +17,12 @@ import modis from "../../public/assets/images/modis.png";
 import landing from "../../public/assets/images/landing.png";
 import star from "../../public/assets/images/star.png";
 
-export const Projects = () => {
+import { Quote } from "../home-page/quote";
+
+import useInView from "react-cool-inview";
+import dynamic from "next/dynamic";
+
+function Projects() {
   return (
     <Styles>
       <Title title={"Projects"} />
@@ -29,6 +36,13 @@ export const Projects = () => {
           tool2={figma}
           tool3={analytics}
         />
+
+        <Quote
+          quoteText={
+            "Be the one who finds the solution rather than apologising for the problem"
+          }
+        />
+
         <ProjectThumbnail
           banner={modis}
           title={"Transitioned a  product to a newly formed Scrum team"}
@@ -38,6 +52,13 @@ export const Projects = () => {
           tool2={figma}
           tool3={miro}
         />
+
+        <Quote
+          quoteText={
+            "It has never been a one-time transformation, but a never-ending search for a more human, more engaging way of working"
+          }
+        />
+
         <ProjectThumbnail
           banner={star}
           title={"Landing page for a Sport platform"}
@@ -47,6 +68,7 @@ export const Projects = () => {
           tool2={figma}
           tool3={framer}
         />
+
         <ProjectThumbnail
           banner={landing}
           title={"Landing page for a Consulting agency"}
@@ -56,14 +78,22 @@ export const Projects = () => {
           tool2={figma}
           tool3={miro}
         />
+
+        <Quote
+          quoteText={
+            "Build your own dreams, or someone else will hire you to build theirs"
+          }
+        />
       </div>
     </Styles>
   );
-};
+}
 
-const Styles = styled.div`
+const Styles = styled(motion.div)`
   margin-top: 100px;
   .myProjects {
-    margin-top: 90px;
+    margin-top: 40px;
   }
 `;
+
+export default Projects;

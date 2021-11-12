@@ -1,22 +1,13 @@
 import Head from "next/head";
 import { Hero } from "../components/sections/Hero";
 import { GoodAt } from "../components/sections/GoodAt";
+import  {Footer}  from "../components/global/footer";
 
-import useInView from "react-cool-inview";
-import dynamic from "next/dynamic";
-// const Projects = dynamic(() => import("../components/sections/projects"));
-import { Projects } from "../components/sections/Projects";
+import Projects from "../components/sections/Projects";
 
 import { Navbar } from "../components/global/navbar";
 
 export default function Home() {
-  //watching if the section is in view
-  const { observe, inView } = useInView({
-    onEnter: ({ unobserve }) => {
-      unobserve();
-    },
-  });
-
   return (
     <div className="bg-background text-greyfont">
       <Head>
@@ -38,12 +29,14 @@ export default function Home() {
         <Hero />
 
         <GoodAt />
+
         <Projects />
-        {/* <div ref={observe}>{inView && <Projects />}</div> */}
       </main>
 
       {/* Footer */}
-      <footer></footer>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }
