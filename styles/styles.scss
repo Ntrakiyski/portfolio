@@ -13,7 +13,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap");
 body {
   font-family: "Roboto Slab", serif;
-  background: $bg-color-dark;
 }
 main {
   padding: 18px;
@@ -68,7 +67,7 @@ p {
     width: 250px;
     text-align: center;
     background: rgba(77, 163, 132, 1);
-    filter: drop-shadow(0px 0px 7px #1f4559);
+    filter: drop-shadow(0px 0px 2px #1f4559);
     color: white;
   }
   //Secondary button - Contact with me
@@ -113,4 +112,86 @@ p {
 }
 .expand {
   animation: cursorAnim 0.8s forwards;
+}
+
+// Themes
+.dark-mode {
+  background: $bg-color-dark;
+  h1,
+  h2 {
+    color: $color-white;
+  }
+
+  h3 {
+    color: rgb(177, 177, 177);
+  }
+  h4 {
+    color: $bg-color-dark;
+  }
+  p,
+  h5 {
+    color: $color-grey;
+  }
+
+  // Dark theme
+  .hamburger-bg {
+    background: linear-gradient(
+      134.42deg,
+      rgba(16, 36, 47, 0.38) 9.6%,
+      rgba(5, 23, 33, 0.38) 96.46%
+    );
+  }
+  .project-container-colors {
+    color: white;
+    background-color: #1a2f3c;
+    h5 {
+      color: white;
+    }
+    .roles {
+      color: #c1c1c1;
+    }
+  }
+  .rect-bg {
+    background-color: #051721;
+  }
+}
+
+// Light theme
+.light-mode {
+  background: $bg-color-light;
+  h1,
+  h2 {
+    color: $bg-color-dark;
+  }
+
+  h3 {
+    color: #051721;
+  }
+  h4 {
+    color: $bg-color-dark;
+  }
+  p,
+  h5 {
+    color: $color-grey;
+  }
+  .hamburger-bg {
+    background: linear-gradient(
+      134.42deg,
+      rgba(255, 255, 255, 1) 9.6%,
+      rgba(172, 195, 207, .38) 96.46%
+    );
+  }
+  .project-container-colors {
+    color: #051721;
+    background-color: #dceafb;
+    h5 {
+      color: #051721;
+    }
+    .roles {
+      color: #515151;
+    }
+  }
+  .rect-bg {
+    background-color: #fbfeff;
+  }
 }

@@ -4,6 +4,7 @@ import {
   colorOrange,
   colorBlue,
   colorGrey,
+  colorDarkerYellow,
 } from "../../styles/Variables/variables.module.scss";
 
 import { Bullet } from "../home-page/bullet";
@@ -19,16 +20,14 @@ export const GoodAt = () => {
       <Title title={"What am I good at?"} />
       <div className="skills">
         <Bullet
-          colorSRC={colorLightYellow}
+          colorSRC={colorDarkerYellow}
           imgSRC={present}
           bulletContent={"Manage teams to a successfully usable product"}
         />
         <Bullet
           colorSRC={colorOrange}
           imgSRC={brain}
-          bulletContent={
-            "Create design using Figma for Landing pages and SaaS "
-          }
+          bulletContent={"Create design using Figma for Landing pages and SaaS"}
         />
         <Bullet
           colorSRC={colorBlue}

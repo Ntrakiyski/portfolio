@@ -7,7 +7,7 @@ $color-orange: #f0875e;
 $color-green: #73a34d;
 $color-white: #ffffff;
 $color-purp: #874da3;
-$color-lightYellow: #FFFDEA;
+$color-lightYellow: #fffdea;
 
 // Fonts
 $h1: 52px;
@@ -17,7 +17,7 @@ $h2: 22px;
 $h2-w: 500;
 
 $h3: 22px;
-$h3-w: 30;
+$h3-w: 400;
 
 $h4: 20px;
 $h4-w: 400;
@@ -29,7 +29,9 @@ $p: 16px;
 $p-w: 400;
 
 //Design system - light
-$bg-color-light: #c6538c;
+$bg-color-light: #fbfeff;
+$color-darker-grey: #515151;
+$color-darker-yellow: #ccc58c;
 
 :export {
   colorGrey: $color-grey;
@@ -41,4 +43,8 @@ $bg-color-light: #c6538c;
   colorWhite: $color-white;
   colorPurp: $color-purp;
   colorLightYellow: $color-lightYellow;
+  //
+  bgColorLight: $bg-color-light;
+  colorDarkerGrey: $color-darker-grey;
+  colorDarkerYellow: $color-darker-yellow;
 }

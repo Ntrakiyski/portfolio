@@ -11,7 +11,7 @@ export default function Services() {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h2>My Services</h2>
+      <p>My Services</p>
     </>
   );
 }

@@ -4,7 +4,7 @@ export const Quote = ({ quoteText }) => {
   return (
     <Styles>
       <div className="line"></div>
-      <span>{quoteText}</span>
+      <p>{quoteText}</p>
     </Styles>
   );
 };
@@ -20,9 +20,8 @@ const Styles = styled.div`
     margin-right: 10px;
     border-radius: 2px;
   }
-  span {
+  p {
     font-size: 16px;
-    color: #d8d7d7;
     font-style: italic;
     font-family: "Oxygen Mono", monospace;
     width: 100%;
