@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaLinkedin } from "react-icons/fa";
-
 import { FiDownload } from 'react-icons/fi';
 import { IoLogoGoogle, IoMdMail } from 'react-icons/io';
+import { navItems } from '../constants/navItems'; // Import navItems from constants
 
 interface EmailModalProps {
   isOpen: boolean;
@@ -74,59 +74,37 @@ declare global {
   }
 }
 
-const navItems = [
-  { name: 'Bio', href: '#about', shortcut: '1' }, 
-  { name: 'Experience', href: '#experience', shortcut: '2' },
-  { name: 'Skills', href: '#skills', shortcut: '3' },
-  { name: 'Why me', href: '#why-me', shortcut: '4' }
-];
-
 interface SidebarProps {
   activeSection: string;
   setActiveSection: (section: string) => void;
-  setHighlightTarget: (sectionId: string | null) => void; // New prop for setting the highlight target
+  sidebarIsOpen: boolean; // Managed by App.tsx
+  setSidebarIsOpen: (value: boolean) => void; // Managed by App.tsx
+  scrollToSection: (href: string) => void; // Shared scroll function from App.tsx
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection, setHighlightTarget }) => {
-  const [isOpen, setIsOpen] = useState(typeof window !== 'undefined' ? window.innerWidth >= 1024 : true);
+const Sidebar: React.FC<SidebarProps> = ({ 
+  activeSection, 
+  setActiveSection, 
+  sidebarIsOpen, // Use prop for isOpen
+  setSidebarIsOpen, // Use prop for setter
+  scrollToSection // Use prop for scroll function
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  useEffect(() => {
-    if (window.gsap && window.ScrollToPlugin) {
-      window.gsap.registerPlugin(window.ScrollToPlugin);
-    }
-  }, []);
+  // No need to register GSAP here, it's done in App.tsx now.
 
+  // handleNavClick now uses the passed scrollToSection prop
   const handleNavClick = useCallback((e: React.MouseEvent<HTMLAnchorElement> | { preventDefault: () => void }, href: string) => {
     e.preventDefault();
-    const sectionId = href.substring(1);
+    scrollToSection(href); // Use the shared scroll function
+  }, [scrollToSection]); 
 
-    if (window.gsap && window.ScrollToPlugin) {
-      window.gsap.to(window, {
-        duration: 1.2,
-        scrollTo: { y: href, offsetY: 100 }, 
-        ease: 'power3.inOut',
-        onComplete: () => { // Trigger highlight ONLY after scroll animation completes
-          setHighlightTarget(sectionId); 
-        }
-      });
-    } else {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        // For fallback: Add a small timeout to allow native smooth scroll to settle
-        setTimeout(() => {
-          setHighlightTarget(sectionId);
-        }, 500); // Adjust this delay if native scroll is very fast or slow
-      }
-    }
-  }, [setHighlightTarget]); // Dependency on setHighlightTarget
-
+  // Effect for keyboard shortcuts (Escape and 1-4 keys)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
         e.preventDefault(); 
-        setIsOpen(prev => !prev); 
+        setSidebarIsOpen(!sidebarIsOpen); // Use prop setter for sidebar state
       } 
       else if (e.key >= '1' && e.key <= '4') { 
         const index = parseInt(e.key) - 1; 
@@ -143,32 +121,32 @@ const Sidebar: React.FC<SidebarProps> = ({ activeSection, setActiveSection, setH
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [handleNavClick, navItems]); 
+  }, [handleNavClick, navItems, setSidebarIsOpen]); // Added setSidebarIsOpen to dependencies
 
   return (
     <>
-      <aside className={`fixed bottom-5 lg:bottom-auto left-5 lg:top-5 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-700 ease-in-out ${isOpen ? 'w-80' : 'w-48'}`}>
-        <div className={`transition-all duration-700 ease-in-out ${isOpen ? 'p-6' : 'p-3'}`}>
+      <aside className={`fixed bottom-5 lg:bottom-auto left-5 lg:top-5 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-700 ease-in-out ${sidebarIsOpen ? 'w-80' : 'w-48'}`}>
+        <div className={`transition-all duration-700 ease-in-out ${sidebarIsOpen ? 'p-6' : 'p-3'}`}>
           <div
             role="button"
             tabIndex={0}
-            aria-expanded={isOpen}
-            onClick={() => setIsOpen(prev => !prev)}
-            onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setIsOpen(prev => !prev)}
+            aria-expanded={sidebarIsOpen}
+            onClick={() => setSidebarIsOpen(!sidebarIsOpen)} // Use prop setter for click
+            onKeyDown={(e) => (e.key === 'Enter' || e.key === ' ') && setSidebarIsOpen(!sidebarIsOpen)} // Use prop setter for enter/space
             className="flex justify-between items-center gap-x-4 cursor-pointer"
           >
             <h2 className="text-sm font-semibold text-gray-400 uppercase tracking-wider select-none">
              Navigation <span className="text-gray-300 text-xs ml-1 hidden lg:inline">[esc]</span>
             </h2>
             <div className="text-gray-400" aria-hidden="true">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className={`w-4 h-4 transform transition-transform duration-700 ease-in-out ${isOpen ? '' : 'rotate-180'}`}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className={`w-4 h-4 transform transition-transform duration-700 ease-in-out ${sidebarIsOpen ? '' : 'rotate-180'}`}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
               </svg>
             </div>
           </div>
           
           {/* Collapsible Content */}
-          <div className={`grid transition-all duration-500 ease-in-out ${isOpen ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
+          <div className={`grid transition-all duration-500 ease-in-out ${sidebarIsOpen ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0 mt-0'}`}>
             <div className="overflow-hidden">
               <nav>
                 <ul className="space-y-1">

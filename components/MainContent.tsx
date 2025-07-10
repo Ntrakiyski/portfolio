@@ -1,18 +1,20 @@
 import React, { useEffect, useRef, useState } from 'react';
 import contentData from '../data/content.json'; 
+import { FaLinkedin } from 'react-icons/fa'; // Import FaLinkedin icon
+import { navItems } from '../constants/navItems'; // Import navItems (for consistency)
 
 interface MainContentProps {
   setActiveSection: (section: string) => void;
   activeSection: string;
-  highlightTarget: string | null; // New prop: ID of the section to highlight
-  setHighlightTarget: (value: string | null) => void; // New prop: to clear the highlight target
+  highlightTarget: string | null; // ID of the section to highlight
+  setHighlightTarget: (value: string | null) => void; // To clear the highlight target
 }
 
 const MainContent: React.FC<MainContentProps> = ({ 
   setActiveSection, 
   activeSection,
-  highlightTarget, // Destructure new props
-  setHighlightTarget // Destructure new props
+  highlightTarget, 
+  setHighlightTarget 
 }) => {
   const { mainContent } = contentData; 
 
@@ -28,7 +30,7 @@ const MainContent: React.FC<MainContentProps> = ({
   const highlightAnimationTimerRef = useRef<NodeJS.Timeout | null>(null); 
 
   // Effect for Intersection Observer: determines the currently active section based on scroll position
-  // This is still needed to update the sidebar's active link.
+  // This is primarily for updating the sidebar's active link.
   useEffect(() => {
     const observerOptions = {
       root: null,
@@ -39,7 +41,7 @@ const MainContent: React.FC<MainContentProps> = ({
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          setActiveSection(entry.target.id); // This updates the active section state in App.tsx
+          setActiveSection(entry.target.id); 
         }
       });
     }, observerOptions);
@@ -61,26 +63,23 @@ const MainContent: React.FC<MainContentProps> = ({
   }, [setActiveSection]);
 
   // Effect for triggering the visual highlight based on highlightTarget prop
+  // This highlight is now strictly controlled by the scrollToSection function in App.tsx
   useEffect(() => {
-    // Only trigger highlight if highlightTarget is set
     if (highlightTarget) {
-      // Clear any pending highlight removal from a previous section or previous trigger
       if (highlightAnimationTimerRef.current) {
         clearTimeout(highlightAnimationTimerRef.current);
       }
 
-      setVisualHighlightedSection(highlightTarget); // Apply the highlight class
+      setVisualHighlightedSection(highlightTarget);
       
-      // Schedule removal of the highlight after the animation completes
       const clearHighlightTimeout = setTimeout(() => {
         setVisualHighlightedSection(null);
         setHighlightTarget(null); // Crucially, reset the highlightTarget in App.tsx after animation
-      }, 1500); // Duration matches the CSS animation time (1.2s) + buffer
+      }, 1500); 
       
       highlightAnimationTimerRef.current = clearHighlightTimeout;
     } else {
-      // If highlightTarget is null, ensure no highlight is active immediately
-      // This handles cases like manual scrolling or initial load where no highlight is desired
+      // If highlightTarget is null (e.g., initial load, manual scroll), ensure no highlight is active
       setVisualHighlightedSection(null);
       if (highlightAnimationTimerRef.current) {
         clearTimeout(highlightAnimationTimerRef.current);
@@ -88,15 +87,12 @@ const MainContent: React.FC<MainContentProps> = ({
       }
     }
 
-    // Cleanup function for this useEffect:
-    // This ensures any pending timeouts are cleared if the component unmounts
-    // or if highlightTarget changes rapidly.
     return () => {
       if (highlightAnimationTimerRef.current) {
         clearTimeout(highlightAnimationTimerRef.current);
       }
     };
-  }, [highlightTarget, setHighlightTarget]); // Dependencies now include highlightTarget and its setter
+  }, [highlightTarget, setHighlightTarget]); 
 
   interface JobProps {
     title: string;
@@ -141,7 +137,7 @@ const MainContent: React.FC<MainContentProps> = ({
         className="scroll-mt-10" 
       >
         <div className={`
-          p-5 rounded-xl // Permanent padding and rounded corners
+          p-5 rounded-xl 
           ${visualHighlightedSection === 'about' ? 'animate-section-highlight' : ''}
         `}>
           <h1 className="text-5xl font-bold text-black mb-3">
@@ -151,15 +147,34 @@ const MainContent: React.FC<MainContentProps> = ({
             {mainContent.intro.tagline}
           </p>
           <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-sm mb-8">
-            {mainContent.intro.contactBadges.map((badge, index) => (
-              badge.type === 'location' ? (
-                <span key={index} className={badgeClasses}>{badge.icon} {badge.text}</span>
-              ) : (
-                <a key={index} href={badge.href} target="_blank" rel="noopener noreferrer" className={badgeClasses}>
-                  {badge.icon} {badge.text}
-                </a>
-              )
-            ))}
+            {mainContent.intro.contactBadges.map((badge, index) => {
+              if (badge.type === 'linkedin') {
+                return (
+                  <a 
+                    key={index} 
+                    href={badge.href} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="inline-flex items-center text-white px-3 py-1 rounded-full border border-[#0077B5] bg-[#0077B5] hover:bg-[#006097] transition-colors duration-200"
+                  >
+                    <FaLinkedin className="w-4 h-4 mr-1" />
+                    {badge.text}
+                  </a>
+                );
+              } else if (badge.type === 'location') {
+                return (
+                  <span key={index} className={badgeClasses}>
+                    {badge.icon} {badge.text}
+                  </span>
+                );
+              } else { 
+                return (
+                  <a key={index} href={badge.href} target="_blank" rel="noopener noreferrer" className={badgeClasses}>
+                    {badge.icon} {badge.text}
+                  </a>
+                );
+              }
+            })}
           </div>
 
           <h2 className="text-3xl font-bold mb-6 text-black">{mainContent.bio.title}</h2>
