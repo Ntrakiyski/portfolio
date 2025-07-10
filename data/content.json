@@ -1,0 +1,138 @@
+{
+    "mainContent": {
+      "intro": {
+        "name": "Nikolay Trakiyski",
+        "tagline": "AI Solutions Architect | Product Manager | Low-code & Open-source addict",
+        "contactBadges": [
+          { "icon": "📧", "text": "nikolay.trakiyski@gmail.com", "href": "mailto:nikolay.trakiyski@gmail.com", "type": "email" },
+          { "icon": "📱", "text": "+359893401356", "href": "tel:+359893401356", "type": "phone" },
+          { "icon": "🌐", "text": "linkedin.com/in/nikolaytrakiyski", "href": "https://www.linkedin.com/in/nikolaytrakiyski", "type": "linkedin" },
+          { "icon": "📍", "text": "Sofia, Bulgaria", "type": "location" }
+        ]
+      },
+      "bio": {
+        "title": "Bio",
+        "paragraph": "I'm obsessed with solving problems by building things - not just managing them. I get energized when someone shows me a manual process that takes 3 hours and I can automate it in 30 minutes using AI and low-code tools, or when I can turn a struggling product around because I understand both what users actually need and how to build it technically. I'm the rare person who can speak fluent CEO, translate it into developer language, and then build the solution myself - which means faster decisions, shorter feedback loops, and products that actually solve the right problems."
+      },
+      "experience": {
+        "title": "Professional Experience",
+        "jobs": [
+          {
+            "title": "AI Solutions Architect",
+            "company": "Fast Track",
+            "dates": "Dec 2024 - Jun 2025",
+            "challenge": "CEO with big social media influencer energy talking about revolutionary AI impact while two fresh college graduates stared at me waiting for step-by-step instructions on how to build 'the future.'",
+            "points": [
+              "Turned college graduates into independent developers in 3 months by refusing to give them simple answers and instead teaching them how to think through problems - they went from asking 'what should I do?' to presenting me with solution options and their reasoning",
+              "Built a multi-tenant Next.js application with AI integration that connected 4 different databases, RAG systems, and N8N workflows while the CEO was still explaining his vision in abstract terms",
+              "Created automated workflows that eliminated 80% of manual data processing by mapping out every step of existing processes and identifying exactly where humans were doing repetitive tasks that APIs could handle",
+              "Designed scalable infrastructure that could handle the CEO's '10,000 users' vision while actually working with our current 50 beta users - built for scale without over-engineering"
+            ]
+          },
+          {
+            "title": "Innovation Manager",
+            "company": "PM Mentality (Non-Profit)",
+            "dates": "Oct 2023 - Present",
+            "challenge": "Building a scalable project management mentorship program from the ground up, managing each season's unique requirements while building the technology infrastructure and serving as both mentor and technical lead.",
+            "points": [
+              "Built complete program infrastructure for 3 seasons including custom registration forms, internal management tools, and participant tracking systems using low-code platforms.",
+              "Designed and developed pmmentality.com website that serves as marketing platform, registration portal, and resource hub for mentors and mentees, handling the entire participant journey from discovery to program completion",
+              "Mentored 2 entry-level participants through PMBOK in Season 1 by translating theoretical project management concepts into practical, real-world examples they could immediately apply in their careers",
+              "Participated in workshops that teach product management and software development fundamentals to other members, enabling them to understand the complete product lifecycle and contribute more effectively to program development"
+            ]
+          },
+          {
+            "title": "Product Owner",
+            "company": "Denshi",
+            "dates": "Oct 2024 - Dec 2024",
+            "challenge": "Short-term engagement to help clients who knew they had business problems but couldn't articulate what they actually needed built, while coordinating between C-level executives, software architects, and development teams.",
+            "points": [
+              "Transformed vague business problems into concrete technical requirements by conducting deep-dive discovery sessions with clients, uncovering the real issues behind their initial requests and translating them into actionable development plans",
+              "Collaborated with software architect to design scalable solutions that met immediate client needs while building for future growth - balanced performance requirements with budget constraints across multiple client projects",
+              "Managed complex stakeholder communication across C-level executives, clients, and development teams, ensuring everyone stayed aligned on priorities and progress while adapting to changing requirements",
+              "Delivered software solutions on tight timelines by maintaining constant communication loops and proactive project updates, resulting in client satisfaction and repeat engagement requests"
+            ]
+          },
+          {
+            "title": "Product Manager",
+            "company": "Akkodis",
+            "dates": "Apr 2022 - Jun 2023",
+            "challenge": "Got promoted to lead team growth and client relations after proving I could turn around struggling projects. Now needed to scale the team, mentor others, and handle direct client communication across multiple international markets.",
+            "points": [
+              "Grew and optimized team from 4 to 6 people by identifying skill gaps and adding the right people - brought in a dedicated designer and a junior product owner for me to mentor.",
+              "Started managing direct client relationships across Germany, Australia, USA, and France, learning to navigate different business cultures and communication styles while maintaining consistent product vision",
+              "Mentored junior product owner from zero to independent - they went from needing approval for every decision to running their own stakeholder calls within 4 months because I gave them real responsibility, not just tasks",
+              "Solved the 'everyone needs something different' problem by finding the common pain points across all international teams and building flexible features that adapted to local needs instead of separate features for each region"
+            ]
+          },
+          {
+            "title": "Product Owner",
+            "company": "Modis",
+            "dates": "Jul 2021 - Apr 2022",
+            "challenge": "Inherited a project that had been running for 2 years with minimal impact, serving 30,000 employees. Previous team couldn't deliver results, and I was wearing multiple hats as designer, product manager, and stakeholder communicator.",
+            "points": [
+              "Delivered 150% increase in monthly active users within 2 months by spending the first week actually understanding what users needed instead of what stakeholders said they needed - turned out they were completely different things",
+              "Established direct communication with VP of Product and learned to translate between executive vision and development reality - they spoke in business outcomes, developers spoke in technical requirements, I became the translator",
+              "Built internal application that scaled across 30,000 employees by designing for the edge cases first (the unusual users in different departments) which made the common cases work perfectly",
+              "Proved I could handle multiple roles simultaneously while delivering better results than the previous specialized team - this led to my promotion to Senior Product Manager"
+            ]
+          },
+          {
+            "title": "Product Owner",
+            "company": "Yettel",
+            "dates": "Apr 2020 - Jun 2021",
+            "challenge": "Junior role where I had to prove I could handle real product decisions, plus we needed to turn an internal tool into something we could actually sell to other companies.",
+            "points": [
+              "Transformed internal employee application into market-ready SaaS product by interviewing potential clients from 3 different industries and discovering they all had the same core problem but described it differently",
+              "Conducted sales meetings with potential clients where I had to demonstrate the product, understand their specific needs, and promise features we hadn't built yet - learned to sell vision while delivering reality",
+              "Managed team of 5 people including sales and developers by creating a process where we could build one feature that worked for multiple client types instead of custom solutions for everyone",
+              "Secured first 3 paying clients by building exactly what they needed, not what we thought they needed - spent more time in their offices understanding their workflow than in ours building features"
+            ]
+          },
+          {
+            "title": "Junior Product Owner",
+            "company": "Yettel",
+            "dates": "Nov 2019 - Apr 2020",
+            "challenge": "First real job, had a mentor watching everything I did, needed to prove I could handle stakeholder communication and team management without screwing up.",
+            "points": [
+              "Learned to communicate with stakeholders by asking questions that revealed the real problem behind their requests - discovered most initial requirements were solutions disguised as problems",
+              "Managed small development team while learning project management - made every mistake possible but documented them so I wouldn't repeat them",
+              "Delivered working software on schedule by over-communicating with everyone involved and building buffer time into estimates because I knew I was still learning",
+              "Graduated from needing approval to making independent decisions by the end of 6 months - mentor went from reviewing every decision to just having weekly check-ins"
+            ]
+          }
+        ]
+      },
+      "skills": {
+        "title": "Core Skills",
+        "list": [
+          {
+            "title": "1. Business-to-Technical Translation",
+            "description": "Most people can either understand business requirements OR technical implementation. I spent 5 years deliberately learning both because I kept seeing projects fail at the translation layer. I can sit in a meeting where the CEO talks about 'revolutionizing customer experience' and walk out with a technical specification that developers can actually build. Proof: I've inherited 3 different 'stuck' projects and delivered results within 2 months each time by fixing the communication gap, not the technical problems."
+          },
+          {
+            "title": "2. AI Integration and Process Automation",
+            "description": "While others debate whether AI will replace jobs, I'm already building systems that make humans 10x more effective at their jobs. I map out manual processes, identify the repetitive parts, and build automated workflows using N8N, APIs, and AI that handle the boring stuff so humans can focus on creative problem-solving. Real example: I built an automated system that eliminated 80% of manual data entry across Gmail, Salesforce, and Instagram by understanding exactly what data moves where and why."
+          },
+          {
+            "title": "3. Full-Stack Product Development",
+            "description": "I don't just manage product development - I can build the entire product myself when needed. This isn't about showing off technical skills; it's about credibility. When I tell developers something will take 2 weeks, they believe me because I've built similar features. When I promise clients a feature, I know exactly what's involved. I can prototype solutions in days instead of months, which means faster validation and iteration cycles."
+          }
+        ]
+      },
+      "whyMe": {
+        "title": "What Makes Me Different",
+        "paragraphs": [
+          "I test 2-3 new applications every day - not as a hobby, but as research. I approach each one with two minds: the curious user trying to understand the experience, and the developer reverse-engineering how it was built. This constant learning keeps me ahead of trends and gives me a massive toolkit of solutions I can adapt to new problems.",
+          "I refuse to be \"just\" a product manager or \"just\" a developer because the biggest value I bring is connecting different worlds. Companies hire specialists and then struggle to get them to work together effectively. I am the bridge - I can code the solution, manage the team building it, and explain to executives why it matters."
+        ]
+      },
+      "contactInfo": {
+        "title": "Contact Information",
+        "introParagraph": "Ready to discuss how I can help your team move faster and build better products. Let's talk about your specific challenges and how my combination of technical skills and product thinking can solve them.",
+        "email": "nikolay.trakiyski@gmail.com",
+        "phone": "+359893401356",
+        "linkedin": "linkedin.com/in/nikolaytrakiyski"
+      }
+    }
+  }

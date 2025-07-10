@@ -1,0 +1,10 @@
+/* Add this to your main CSS file, e.g., globals.css */
+
+@keyframes section-bg-flash {
+    0% { background-color: rgba(240, 248, 255, 0.6); } /* AliceBlue with 60% opacity */
+    100% { background-color: transparent; } /* Fades to transparent */
+  }
+  
+  .animate-section-highlight {
+    animation: section-bg-flash 1.2s ease-out forwards; /* 1.2s animation duration */
+  }
