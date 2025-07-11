@@ -49,6 +49,7 @@ const App: React.FC = () => {
 
   return (
     <div className="bg-white text-black min-h-screen font-sans">
+
       <Sidebar 
         activeSection={activeSection} 
         setActiveSection={setActiveSection} 
@@ -74,7 +75,7 @@ const App: React.FC = () => {
         activeSection={activeSection}
         navItems={navItems} // Use the centralized navItems
         scrollToSection={scrollToSection}
-        isSidebarOpen={sidebarIsOpen} // Pass sidebar state to hide arrows when sidebar is open
+
       />
     </div>
   );

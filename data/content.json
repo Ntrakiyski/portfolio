@@ -33,7 +33,31 @@
             "Built a multi-tenant Next.js app with AI integration, connecting 4 databases, RAG systems, and N8N workflows.",
             "Automated workflows, eliminating 80% of manual data processing by identifying repetitive tasks suitable for API handling.",
             "Designed scalable infrastructure for 10,000 users, balancing future growth with current needs of 50 beta users."
-          ]
+          ],
+          "skills": {
+            "list": [
+              "Full-Stack Development & Web Architecture",
+              "DevOps & Scalable Infrastructure",
+              "Strategic Product Leadership & Requirements Gathering",
+              "Database Management & AI Integration"
+            ]
+          },
+          "tools": {
+            "list": [
+              "AI & Automation Platforms (OpenAI, OpenRouter, Mistral OCR, N8N)",
+              "Modern Web Stack (Next.js, Shadcn, Clerk, Resend)",
+              "Cloud Infrastructure & DevOps (Hetzner, Coolify, GitHub, Cloudflare)",
+              "Database & Data Management (Supabase, MongoDB)"
+            ]
+          },
+          "projects": {
+            "list": [
+              "Multi-tenant Next.js SaaS web application with N8N business logic",
+              "Multiple apps workflow automations",
+              "Custom Vector Store development",
+              "RAG (Retrieval-Augmented Generation) implementations"
+            ]
+          }
         },
         {
           "title": "Innovation Manager",
@@ -51,7 +75,31 @@
             "Designed and developed pmmentality.com, serving as a marketing platform, registration portal, and resource hub for mentors/mentees.",
             "Mentored 2 entry-level participants through PMBOK, translating theoretical concepts into practical, real-world applications.",
             "Taught product management and software development fundamentals in workshops, improving team contribution to program development."
-          ]
+          ],
+          "skills": {
+            "list": [
+              "Leadership & Mentorship",
+              "Full-Stack Development & Product Management",
+              "Scrum & Agile Methodologies",
+              "Program Infrastructure Design"
+            ]
+          },
+          "tools": {
+            "list": [
+              "Low-code & Automation Platforms (Coda, n8n, Retool)",
+              "Web Development & AI (Next.js, OpenRouter, WebFlow)",
+              "Document & Collaboration (Docmost, G-Suite)",
+              "Project & Program Management (Trello)"
+            ]
+          },
+          "projects": {
+            "list": [
+              "Development of the main PM Mentality website",
+              "Building digital products for program operation & management",
+              "Mentoring 2 mentees covering PMBOK7 principles",
+              "Scalable program infrastructure development"
+            ]
+          }
         },
         {
           "title": "Product Owner",
@@ -69,7 +117,29 @@
             "Collaborated with software architects to design scalable solutions, balancing client needs, performance, and budget constraints.",
             "Managed complex stakeholder communication, ensuring alignment and adapting to changing requirements across teams.",
             "Delivered software solutions on tight timelines through constant communication and proactive updates, ensuring client satisfaction."
-          ]
+          ],
+          "skills": {
+            "list": [
+              "Project Management",
+              "Client Communication & Stakeholder Management",
+              "UI/UX Design & Wireframing",
+              "Internal Operations Automation"
+            ]
+          },
+          "tools": {
+            "list": [
+              "Cloud & Development Platforms (Azure, Next.js)",
+              "Productivity & Collaboration (Microsoft Suite)",
+              "Design & Prototyping (Figma, Relume)",
+              "Internal Tools & Automation (Retool)"
+            ]
+          },
+          "projects": {
+            "list": [
+              "Created an internal system for updating and tracking project progress, including regular client updates.",
+              "Led a website development project, focusing on wireframing, client communication, and requirements gathering."
+            ]
+          }
         },
         {
           "title": "Product Manager",
@@ -84,14 +154,38 @@
           ],
           "summarizedPoints": [
             "Grew and optimized team from 4 to 6 by identifying skill gaps and adding a designer and junior product owner for mentorship.",
-            "Managed direct client relationships across Germany, Australia, USA, and France, adapting to diverse business cultures.",
+            "Managed direct client relationships across Germany, Australia, USA, and and France, adapting to diverse business cultures.",
             "Mentored a junior product owner to independence within 4 months by delegating real responsibility and fostering ownership.",
             "Solved the 'everyone needs something different' problem by building flexible features addressing common international pain points."
-          ]
+          ],
+          "skills": {
+            "list": [
+              "User Research & Interviews",
+              "C-level Requirements Gathering",
+              "Leadership & Team Navigation",
+              "Product Ownership & Strategy"
+            ]
+          },
+          "tools": {
+            "list": [
+              "User Research & Analytics (Dovetails)",
+              "Cloud & Development Platforms (AWS, Vue.js)",
+              "Productivity & Collaboration (Microsoft Suite)",
+              "Low-code & Automation (Airtable, n8n)"
+            ]
+          },
+          "projects": {
+            "list": [
+              "Developed a globally adopted tool for multi-industry team collaboration.",
+              "Orchestrated strategic growth and performance of a 6-person product team.",
+              "Built and deployed internal no-code tools for process automation.",
+              "Managed product strategy and deployment for diverse international markets."
+            ]
+          }
         },
         {
           "title": "Product Owner",
-          "company": "Modis",
+          "company": "Akkodis",
           "dates": "Jul 2021 - Apr 2022",
           "challenge": "Inherited a project that had been running for 2 years with minimal impact, serving 30,000 employees. Previous team couldn't deliver results, and I was wearing multiple hats as designer, product manager, and stakeholder communicator.",
           "points": [
@@ -105,7 +199,31 @@
             "Translated executive vision into technical requirements, bridging communication gaps between VP of Product and developers.",
             "Built a scalable internal application for 30,000 employees by prioritizing edge cases, ensuring broad functionality.",
             "Demonstrated ability to handle multiple roles, delivering superior results and earning a promotion to Senior Product Manager."
-          ]
+          ],
+          "skills": {
+            "list": [
+              "Scrum & Agile Methodologies",
+              "Product Management & Strategy",
+              "Design Systems & UI/UX",
+              "Talent Acquisition & Recruitment"
+            ]
+          },
+          "tools": {
+            "list": [
+              "Design & Prototyping (Figma, Whimsical)",
+              "Productivity & Collaboration (Microsoft Suite)",
+              "AI & Ideation (OpenAI)",
+              "Project Management"
+            ]
+          },
+          "projects": {
+            "list": [
+              "Successfully transferred and turned around a 2-year stagnant project from an international team.",
+              "Recruited 3 developers and 1 QA, significantly expanding team capabilities.",
+              "Led the redesign of a key web application.",
+              "Implemented changes resulting in increased user engagement."
+            ]
+          }
         },
         {
           "title": "Product Owner",
@@ -123,7 +241,31 @@
             "Conducted sales meetings, demonstrating product vision and understanding specific client needs.",
             "Managed a 5-person team, streamlining feature development for multiple client types.",
             "Secured first 3 paying clients by delivering precise solutions based on deep workflow understanding."
-          ]
+          ],
+          "skills": {
+            "list": [
+              "Market Analysis and Product-Market Fit.",
+              "SaaS Product Development.",
+              "Client Relationship Management.",
+              "Sales and Negotiation Skills."
+            ]
+          },
+          "tools": {
+            "list": [
+              "CRM software for client management.",
+              "Project management tools (e.g., Asana, Trello).",
+              "Communication platforms (e.g., Slack, Microsoft Teams).",
+              "Analytics tools for market research."
+            ]
+          },
+          "projects": {
+            "list": [
+              "Transformed internal tool into a market-ready SaaS product.",
+              "Secured initial paying clients through product demonstrations.",
+              "Managed the development of client-specific features.",
+              "Contributed to the product roadmap for SaaS expansion."
+            ]
+          }
         },
         {
           "title": "Junior Product Owner",
@@ -141,7 +283,31 @@
             "Managed a small dev team, learning project management and documenting mistakes for future improvement.",
             "Delivered software on schedule by over-communicating and building buffer time into estimates due to learning curve.",
             "Progressed from needing approval to making independent decisions within 6 months, with reduced mentor oversight."
-          ]
+          ],
+          "skills": {
+            "list": [
+              "Stakeholder Communication.",
+              "Project Management Fundamentals.",
+              "Team Collaboration.",
+              "Problem-solving and Adaptability."
+            ]
+          },
+          "tools": {
+            "list": [
+              "Jira for task management.",
+              "Confluence for meeting notes and documentation.",
+              "Microsoft Excel for data tracking.",
+              "Google Meet for team communication."
+            ]
+          },
+          "projects": {
+            "list": [
+              "Assisted in the launch of a new internal communication tool.",
+              "Contributed to the development of a team-wide project tracking system.",
+              "Supported the implementation of new agile ceremonies.",
+              "Participated in user acceptance testing for product releases."
+            ]
+          }
         }
       ]
     },

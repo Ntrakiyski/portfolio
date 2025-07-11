@@ -1,5 +1,5 @@
 // components/SidebarShell.tsx (or wherever you prefer to place it)
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 
 interface SidebarShellProps {
   sidebarIsOpen: boolean;
@@ -8,8 +8,31 @@ interface SidebarShellProps {
 }
 
 const SidebarShell: React.FC<SidebarShellProps> = ({ sidebarIsOpen, setSidebarIsOpen, children }) => {
+  const sidebarRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      // Check if the click is outside the sidebar AND sidebar is open AND it's a mobile view
+      if (
+        sidebarRef.current &&
+        !sidebarRef.current.contains(event.target as Node) &&
+        sidebarIsOpen &&
+        window.innerWidth < 1024 // Tailwind's 'lg' breakpoint is 1024px
+      ) {
+        setSidebarIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [sidebarIsOpen, setSidebarIsOpen]);
+
   return (
-    <aside className={`fixed bottom-5 lg:bottom-auto left-5 lg:top-5 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-700 ease-in-out ${sidebarIsOpen ? 'w-[270px] lg:w-80' : 'w-[142px] lg:w-48'}`}>
+    <aside 
+      ref={sidebarRef}
+      className={`fixed bottom-5 lg:bottom-auto left-5 lg:top-5 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-700 ease-in-out ${sidebarIsOpen ? 'w-[270px] lg:w-80' : 'w-[142px] lg:w-48'}`}>
       <div className={`transition-all duration-700 ease-in-out ${sidebarIsOpen ? 'p-6' : 'p-3'}`}>
         <div
           role="button"

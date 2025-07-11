@@ -12,14 +12,14 @@ interface MobileSectionNavigatorProps {
   activeSection: string;
   navItems: NavItem[];
   scrollToSection: (href: string) => void;
-  isSidebarOpen: boolean; // To hide arrows when sidebar is open
+
 }
 
 const MobileSectionNavigator: React.FC<MobileSectionNavigatorProps> = ({
   activeSection,
   navItems,
   scrollToSection,
-  isSidebarOpen,
+
 }) => {
   const currentSectionIndex = navItems.findIndex(
     (item) => item.href.substring(1) === activeSection
@@ -57,7 +57,7 @@ const MobileSectionNavigator: React.FC<MobileSectionNavigatorProps> = ({
         fixed bottom-5 right-5 z-20 
         flex-row gap-2 
         lg:hidden // Hide on large screens
-        ${isSidebarOpen ? 'hidden' : 'flex'} // Hide if sidebar is open
+        flex // Always show on mobile
       `}
     >
       <button

@@ -39,9 +39,9 @@ The application adheres to the following principles to ensure maintainability, s
 
 ## 4. State Management & Data Flow Detailed
 
-The application's core interactivity relies on a centralized state management approach, likely originating from a root `App.tsx` component (not provided, but inferred as the orchestration layer).
+The application's core interactivity relies on a centralized state management approach, primarily managed within `App.tsx` (the orchestration layer).
 
-**Key Global States (Managed at Root Level):**
+**Key Global States (Managed at Root Level in `App.tsx`):**
 
 *   **`activeSection: string`**:
     *   **Purpose:** Identifies the currently visible content section. Used for:
@@ -55,8 +55,19 @@ The application's core interactivity relies on a centralized state management ap
     *   **Flow:** Passed down as a prop to `SidebarShell` (for UI), `Sidebar` (for internal logic), and `MobileSectionNavigator` (for hiding mobile controls when sidebar is open).
 *   **`highlightTarget: string | null`**:
     *   **Purpose:** A temporary state that signals which content section should receive a visual highlight animation.
-    *   **Source:** Set by navigation clicks in `Sidebar` (via `setHighlightTarget` callback). Cleared automatically by `useSectionHighlight`.
+    *   **Source:** Set by navigation clicks (via `scrollToSection` in `App.tsx`). Cleared automatically by `useSectionHighlight`.
     *   **Flow:** Passed down as a prop to `MainContent`.
+
+**Centralized Functions & Initializations in `App.tsx`:**
+
+*   **`scrollToSection(href: string)`**:
+    *   **Purpose:** Handles smooth scrolling to a specified section ID using GSAP's `ScrollToPlugin`.
+    *   **Responsibilities:** Orchestrates the scroll animation and triggers the `highlightTarget` state update upon completion.
+    *   **Flow:** Passed down to `Sidebar` and `MobileSectionNavigator`.
+*   **GSAP `ScrollToPlugin` Registration:** Registered once on component mount to enable smooth scrolling functionality.
+
+**Key Global States (Managed within `Sidebar.tsx`):**
+
 *   **`isModalOpen: boolean`**:
     *   **Purpose:** Controls the visibility of the `EmailModal`.
     *   **Source:** Toggled by a button in `SidebarNavAndActions` and by closing the modal itself.
@@ -65,9 +76,9 @@ The application's core interactivity relies on a centralized state management ap
 **Data Flow Principles:**
 
 *   **Top-Down Data Flow (Props):**
-    *   Root (`App.tsx`) -> `MainContent` (activeSection, highlightTarget, setHighlightTarget)
-    *   Root (`App.tsx`) -> `Sidebar` (activeSection, setActiveSection, sidebarIsOpen, setSidebarIsOpen, scrollToSection)
-    *   Root (`App.tsx`) -> `MobileSectionNavigator` (activeSection, navItems, scrollToSection, isSidebarOpen)
+    *   `App.tsx` -> `MainContent` (activeSection, highlightTarget, setHighlightTarget)
+    *   `App.tsx` -> `Sidebar` (activeSection, setActiveSection, sidebarIsOpen, setSidebarIsOpen, scrollToSection)
+    *   `App.tsx` -> `MobileSectionNavigator` (activeSection, navItems, scrollToSection, isSidebarOpen)
     *   `MainContent` -> `Content` (sectionRefs, visualHighlightedSection)
     *   `Sidebar` -> `SidebarShell` (sidebarIsOpen, setSidebarIsOpen)
     *   `Sidebar` -> `SidebarNavAndActions` (activeSection, handleNavClick, setIsModalOpen)
@@ -87,15 +98,20 @@ The application's core interactivity relies on a centralized state management ap
     *   **Key Props:** `setActiveSection`, `highlightTarget`, `setHighlightTarget`.
 *   **`src/components/Content.jsx`**:
     *   **Role:** Renders all dynamic CV content sections.
-    *   **Responsibilities:** Reads data from `content.json`, maps data to reusable sub-components (`Job`, `Skill`, `ContactBadges`), and applies highlight styling based on `visualHighlightedSection`. Links section `ref` objects for observation.
+    *   **Responsibilities:** Reads data from `content.json`, maps data to reusable sub-components (`Job`, `Skill`, `ContactBadges`, `ExperienceTabs`), and applies highlight styling based on `visualHighlightedSection`. Links section `ref` objects for observation.
     *   **Key Props:** `sectionRefs`, `visualHighlightedSection`.
-    *   **Internal Components:** `Job`, `Skill`, `ContactBadges`, `SectionWrapper` (for consistent section structure and highlighting).
+    *   **Internal Components:** `Job` (now integrates `ExperienceTabs`), `Skill`, `ContactBadges`, `SectionWrapper` (for consistent section structure and highlighting).
 *   **`src/components/SectionWrapper.tsx`**:
     *   **Role:** Wraps sections with scroll margin and conditional styling for contact section.
-    *   **Responsibilities:** Padding was adjusted from p-5 to p-6 for consistent UI spacing.
+    *   **Responsibilities:** Provides consistent section structure and applies visual highlighting. Padding was adjusted from p-5 to p-6 for consistent UI spacing.
 *   **`src/components/SectionDivider.tsx`**:
     *   **Role:** Provides consistent vertical spacing between content sections.
     *   **Responsibilities:** Renders a styled horizontal rule with responsive vertical margins (`my-4` for mobile and `lg:my-16` for desktop).
+*   **`src/components/ExperienceTabs.tsx`**:
+    *   **Role:** Displays detailed job experience information using a tabbed interface.
+    *   **Responsibilities:** Renders job title, company, dates, and a challenge description. Manages active tab state. Uses GSAP for smooth content transitions between tabs. Implements responsive tab display, including an overflow menu for smaller screens. Supports touch-based swiping for tab navigation. Displays different content based on the active tab: summarized points, detailed points, associated tools, skills, and projects.
+    *   **Key Props:** `points`, `summarizedPoints`, `jobTitle`, `company`, `dates`, `challenge`, `skills`, `tools`, `projects`.
+    *   **Internal Logic:** Uses `useState`, `useEffect`, `useRef`, `gsap` for animations, and `ResizeObserver` for responsive tab rendering.
 *   **`src/components/Sidebar.tsx`**:
     *   **Role:** Central logic orchestrator for the entire sidebar, navigation, and associated actions.
     *   **Responsibilities:** Manages the `EmailModal` state, implements keyboard shortcuts for navigation and sidebar toggling, and passes necessary props/callbacks to its children.

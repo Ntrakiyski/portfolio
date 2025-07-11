@@ -8,14 +8,20 @@ import ExperienceTabs from './ExperienceTabs';
 /**
  * Reusable Job Item Component (internal to Content.jsx)
  */
-const Job = ({ title, company, dates, challenge, points, summarizedPoints }) => (
+const Job = ({ title, company, dates, challenge, points, summarizedPoints, skills, tools, projects }) => (
   <div>
     <h3 className="text-xl font-semibold text-black">{title}</h3>
     <p className="text-md text-gray-600">{company} | {dates}</p>
-    <p className="italic text-gray-500 my-3 bg-gray-50 p-3 rounded-md">
+    <p className="text-black my-3 p-3 border-l-2 border-black">
       <strong>The Challenge:</strong> {challenge}
     </p>
-    <ExperienceTabs points={points} summarizedPoints={summarizedPoints} />
+    <ExperienceTabs 
+      points={points} 
+      summarizedPoints={summarizedPoints} 
+      skills={skills.list} 
+      tools={tools.list} 
+      projects={projects.list} 
+    />
   </div>
 );
 
@@ -58,7 +64,7 @@ const ContactBadges = ({ badges }) => {
     <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-sm mb-8">
       {badges.map((badge, index) => {
         const IconComponent = IconComponents[badge.icon];
-        const iconColorClass = getIconColorClass(badge.type);
+        const iconColorClass = badge.type === 'linkedin' ? 'text-blue-600' : getIconColorClass(badge.type);
         const iconElement = IconComponent ? <IconComponent className={`w-4 h-4 mr-1 ${iconColorClass}`} /> : null;
 
         const isLinkedIn = badge.type === 'linkedin';
@@ -66,7 +72,7 @@ const ContactBadges = ({ badges }) => {
 
         const baseBadgeClasses = "inline-flex items-center px-3 py-1 rounded-full transition-colors duration-200";
         const badgeClasses = isLinkedIn
-          ? `${baseBadgeClasses} text-white border border-[#0077B5] bg-[#0077B5] hover:bg-[#006097]`
+          ? `${baseBadgeClasses} bg-gray-100 text-gray-700 border border-gray-200 hover:bg-gray-200`
           : `${baseBadgeClasses} bg-gray-100 text-gray-700 border border-gray-200 hover:bg-gray-200`;
 
         const content = (
