@@ -4,10 +4,10 @@
       "name": "Nikolay Trakiyski",
       "tagline": "AI Solutions Architect | Product Manager | Low-code & Open-source addict",
       "contactBadges": [
-        { "icon": "📧", "text": "nikolay.trakiyski@gmail.com", "href": "mailto:nikolay.trakiyski@gmail.com", "type": "email" },
-        { "icon": "📱", "text": "+359893401356", "href": "tel:+359893401356", "type": "phone" },
-        { "icon": "FaLinkedin", "text": "linkedin.com/in/nikolaytrakiyski", "href": "https://www.linkedin.com/in/nikolaytrakiyski", "type": "linkedin" },
-        { "icon": "📍", "text": "Sofia, Bulgaria", "type": "location" }
+        { "icon": "FaEnvelope", "text": "nikolay.trakiyski@gmail.com", "href": "mailto:nikolay.trakiyski@gmail.com", "type": "email" },
+        { "icon": "FaPhone", "text": "+359893401356", "href": "tel:+359893401356", "type": "phone" },
+        { "icon": "FaLinkedin", "text": "nikolaytrakiyski", "href": "https://www.linkedin.com/in/nikolaytrakiyski", "type": "linkedin" },
+        { "icon": "FaMapMarkerAlt", "text": "Sofia, Bulgaria", "type": "location" }
       ]
     },
     "bio": {
@@ -27,6 +27,12 @@
             "Built a multi-tenant Next.js application with AI integration that connected 4 different databases, RAG systems, and N8N workflows while the CEO was still explaining his vision in abstract terms",
             "Created automated workflows that eliminated 80% of manual data processing by mapping out every step of existing processes and identifying exactly where humans were doing repetitive tasks that APIs could handle",
             "Designed scalable infrastructure that could handle the CEO's '10,000 users' vision while actually working with our current 50 beta users - built for scale without over-engineering"
+          ],
+          "summarizedPoints": [
+            "Turned college graduates into independent developers in 3 months by teaching them how to think through problems, leading to solution proposals.",
+            "Built a multi-tenant Next.js app with AI integration, connecting 4 databases, RAG systems, and N8N workflows.",
+            "Automated workflows, eliminating 80% of manual data processing by identifying repetitive tasks suitable for API handling.",
+            "Designed scalable infrastructure for 10,000 users, balancing future growth with current needs of 50 beta users."
           ]
         },
         {
@@ -39,6 +45,12 @@
             "Designed and developed pmmentality.com website that serves as marketing platform, registration portal, and resource hub for mentors and mentees, handling the entire participant journey from discovery to program completion",
             "Mentored 2 entry-level participants through PMBOK in Season 1 by translating theoretical project management concepts into practical, real-world examples they could immediately apply in their careers",
             "Participated in workshops that teach product management and software development fundamentals to other members, enabling them to understand the complete product lifecycle and contribute more effectively to program development"
+          ],
+          "summarizedPoints": [
+            "Built complete program infrastructure for 3 seasons using low-code platforms, including registration, management, and tracking systems.",
+            "Designed and developed pmmentality.com, serving as a marketing platform, registration portal, and resource hub for mentors/mentees.",
+            "Mentored 2 entry-level participants through PMBOK, translating theoretical concepts into practical, real-world applications.",
+            "Taught product management and software development fundamentals in workshops, improving team contribution to program development."
           ]
         },
         {
@@ -51,6 +63,12 @@
             "Collaborated with software architect to design scalable solutions that met immediate client needs while building for future growth - balanced performance requirements with budget constraints across multiple client projects",
             "Managed complex stakeholder communication across C-level executives, clients, and development teams, ensuring everyone stayed aligned on priorities and progress while adapting to changing requirements",
             "Delivered software solutions on tight timelines by maintaining constant communication loops and proactive project updates, resulting in client satisfaction and repeat engagement requests"
+          ],
+          "summarizedPoints": [
+            "Transformed vague business problems into concrete technical requirements through deep-dive discovery sessions with clients.",
+            "Collaborated with software architects to design scalable solutions, balancing client needs, performance, and budget constraints.",
+            "Managed complex stakeholder communication, ensuring alignment and adapting to changing requirements across teams.",
+            "Delivered software solutions on tight timelines through constant communication and proactive updates, ensuring client satisfaction."
           ]
         },
         {
@@ -63,6 +81,12 @@
             "Started managing direct client relationships across Germany, Australia, USA, and France, learning to navigate different business cultures and communication styles while maintaining consistent product vision",
             "Mentored junior product owner from zero to independent - they went from needing approval for every decision to running their own stakeholder calls within 4 months because I gave them real responsibility, not just tasks",
             "Solved the 'everyone needs something different' problem by finding the common pain points across all international teams and building flexible features that adapted to local needs instead of separate features for each region"
+          ],
+          "summarizedPoints": [
+            "Grew and optimized team from 4 to 6 by identifying skill gaps and adding a designer and junior product owner for mentorship.",
+            "Managed direct client relationships across Germany, Australia, USA, and France, adapting to diverse business cultures.",
+            "Mentored a junior product owner to independence within 4 months by delegating real responsibility and fostering ownership.",
+            "Solved the 'everyone needs something different' problem by building flexible features addressing common international pain points."
           ]
         },
         {
@@ -75,6 +99,12 @@
             "Established direct communication with VP of Product and learned to translate between executive vision and development reality - they spoke in business outcomes, developers spoke in technical requirements, I became the translator",
             "Built internal application that scaled across 30,000 employees by designing for the edge cases first (the unusual users in different departments) which made the common cases work perfectly",
             "Proved I could handle multiple roles simultaneously while delivering better results than the previous specialized team - this led to my promotion to Senior Product Manager"
+          ],
+          "summarizedPoints": [
+            "Increased monthly active users by 150% in 2 months by focusing on actual user needs over stakeholder assumptions.",
+            "Translated executive vision into technical requirements, bridging communication gaps between VP of Product and developers.",
+            "Built a scalable internal application for 30,000 employees by prioritizing edge cases, ensuring broad functionality.",
+            "Demonstrated ability to handle multiple roles, delivering superior results and earning a promotion to Senior Product Manager."
           ]
         },
         {
@@ -87,6 +117,12 @@
             "Conducted sales meetings with potential clients where I had to demonstrate the product, understand their specific needs, and promise features we hadn't built yet - learned to sell vision while delivering reality",
             "Managed team of 5 people including sales and developers by creating a process where we could build one feature that worked for multiple client types instead of custom solutions for everyone",
             "Secured first 3 paying clients by building exactly what they needed, not what we thought they needed - spent more time in their offices understanding their workflow than in ours building features"
+          ],
+          "summarizedPoints": [
+            "Transformed internal app into market-ready SaaS by identifying common client problems across industries.",
+            "Conducted sales meetings, demonstrating product vision and understanding specific client needs.",
+            "Managed a 5-person team, streamlining feature development for multiple client types.",
+            "Secured first 3 paying clients by delivering precise solutions based on deep workflow understanding."
           ]
         },
         {
@@ -99,6 +135,12 @@
             "Managed small development team while learning project management - made every mistake possible but documented them so I wouldn't repeat them",
             "Delivered working software on schedule by over-communicating with everyone involved and building buffer time into estimates because I knew I was still learning",
             "Graduated from needing approval to making independent decisions by the end of 6 months - mentor went from reviewing every decision to just having weekly check-ins"
+          ],
+          "summarizedPoints": [
+            "Learned stakeholder communication by asking questions to reveal true problems behind requests, not just stated solutions.",
+            "Managed a small dev team, learning project management and documenting mistakes for future improvement.",
+            "Delivered software on schedule by over-communicating and building buffer time into estimates due to learning curve.",
+            "Progressed from needing approval to making independent decisions within 6 months, with reduced mentor oversight."
           ]
         }
       ]

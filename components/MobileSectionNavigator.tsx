@@ -46,7 +46,7 @@ const MobileSectionNavigator: React.FC<MobileSectionNavigatorProps> = ({
   const arrowButtonClasses = `
     w-12 h-12 flex items-center justify-center 
     bg-white/80 backdrop-blur-sm border border-gray-200 
-    rounded-lg shadow-lg text-gray-600 hover:text-black 
+    rounded-lg shadow-lg text-gray-400 hover:text-black 
     hover:bg-gray-100 transition-colors cursor-pointer
     focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2
   `;
@@ -55,7 +55,7 @@ const MobileSectionNavigator: React.FC<MobileSectionNavigatorProps> = ({
     <div 
       className={`
         fixed bottom-5 right-5 z-20 
-        flex-col gap-2 
+        flex-row gap-2 
         lg:hidden // Hide on large screens
         ${isSidebarOpen ? 'hidden' : 'flex'} // Hide if sidebar is open
       `}

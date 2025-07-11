@@ -58,12 +58,11 @@ const App: React.FC = () => {
       />
       
       <main 
-        className="flex justify-center p-8 md:p-12 
+        className="flex justify-center md:p-12 
                    ml-0 lg:ml-[220px] 
                    flex-grow" 
       >
         <MainContent 
-          activeSection={activeSection} 
           setActiveSection={setActiveSection} 
           highlightTarget={highlightTarget} 
           setHighlightTarget={setHighlightTarget} 
