@@ -1,14 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
-import MobileSectionNavigator from './components/MobileSectionNavigator'; // Import new component
+
 import { navItems } from './constants/navItems'; // Import navItems
-declare global {
-  interface Window {
-    gsap: any;
-    ScrollToPlugin: any;
-  }
-}
+
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('about'); 
@@ -70,13 +65,6 @@ const App: React.FC = () => {
         />
       </main>
 
-      {/* Mobile navigation arrows */}
-      <MobileSectionNavigator
-        activeSection={activeSection}
-        navItems={navItems} // Use the centralized navItems
-        scrollToSection={scrollToSection}
-
-      />
     </div>
   );
 };

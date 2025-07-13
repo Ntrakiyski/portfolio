@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap, Power3 } from 'gsap';
-import { FaList, FaCompressAlt, FaTools, FaLightbulb, FaProjectDiagram } from 'react-icons/fa';
+import { FaCompressAlt, FaTools, FaLightbulb, FaProjectDiagram } from 'react-icons/fa';
 import { BsThreeDots } from 'react-icons/bs';
 
 import { IconType } from 'react-icons';
@@ -23,15 +23,11 @@ interface Tab {
   content: string[];
 }
 
-const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ points, summarizedPoints, jobTitle, company, dates, challenge, skills, tools, projects }) => {
+const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ points, jobTitle, company, dates, challenge, skills, tools, projects }) => {
   const tabs: Tab[] = [
+
     {
-      name: 'Summarised',
-      icon: FaList,
-      content: summarizedPoints,
-    },
-    {
-      name: 'Concise',
+      name: 'Impact',
       icon: FaCompressAlt,
       content: points,
     },

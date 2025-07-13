@@ -1,5 +1,6 @@
 // src/components/MobileSectionNavigator.tsx
-import React from 'react';
+import React, { useEffect } from 'react';
+import gsap from 'gsap';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa'; // Import arrow icons
 
 interface NavItem {
@@ -12,15 +13,40 @@ interface MobileSectionNavigatorProps {
   activeSection: string;
   navItems: NavItem[];
   scrollToSection: (href: string) => void;
-
+  sidebarIsOpen: boolean;
 }
 
 const MobileSectionNavigator: React.FC<MobileSectionNavigatorProps> = ({
   activeSection,
   navItems,
   scrollToSection,
-
+  sidebarIsOpen,
 }) => {
+  const arrowsRef = React.useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (arrowsRef.current) {
+      if (sidebarIsOpen) {
+        // Hide arrows: move to the right and fade out
+        gsap.to(arrowsRef.current, {
+          x: 100, // Move 100px to the right
+          opacity: 0,
+          duration: 0.3,
+          ease: 'power2.in',
+          onComplete: () => {
+            arrowsRef.current!.style.display = 'none'; // Hide completely after animation
+          },
+        });
+      } else {
+        // Show arrows: bring back from the right and fade in
+        arrowsRef.current.style.display = 'flex'; // Make visible before animation
+        gsap.fromTo(arrowsRef.current,
+          { x: 100, opacity: 0 }, // Start from right and hidden
+          { x: 0, opacity: 1, duration: 0.3, ease: 'power2.out' }
+        );
+      }
+    }
+  }, [sidebarIsOpen]);
   const currentSectionIndex = navItems.findIndex(
     (item) => item.href.substring(1) === activeSection
   );
@@ -53,6 +79,7 @@ const MobileSectionNavigator: React.FC<MobileSectionNavigatorProps> = ({
 
   return (
     <div 
+      ref={arrowsRef}
       className={`
         fixed bottom-5 right-5 z-20 
         flex-row gap-2 

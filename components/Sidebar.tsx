@@ -6,6 +6,7 @@ import { navItems } from '../constants/navItems';
 import SidebarShell from './SidebarShell';
 import SidebarNavAndActions from './SidebarNavAndActions';
 import EmailModal from './EmailModal'; // Import the new EmailModal component
+import MobileSectionNavigator from './MobileSectionNavigator';
 
 declare global {
   interface Window {
@@ -74,6 +75,12 @@ const Sidebar: React.FC<SidebarProps> = ({
       </SidebarShell>
       
       <EmailModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <MobileSectionNavigator
+        activeSection={activeSection}
+        navItems={navItems}
+        scrollToSection={scrollToSection}
+        sidebarIsOpen={sidebarIsOpen}
+      />
     </>
   );
 };
