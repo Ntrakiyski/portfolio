@@ -2,8 +2,6 @@ import React, { useState, useEffect, useCallback } from 'react';
 import Sidebar from './components/Sidebar';
 import MainContent from './components/MainContent';
 
-import { navItems } from './constants/navItems'; // Import navItems
-
 
 const App: React.FC = () => {
   const [activeSection, setActiveSection] = useState('about'); 

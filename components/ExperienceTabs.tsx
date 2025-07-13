@@ -10,8 +10,7 @@ interface ExperienceTabsProps {
   summarizedPoints: string[];
   jobTitle: string;
   company: string;
-  dates: string;
-  challenge: string;
+
   skills: string[];
   tools: string[];
   projects: string[];
@@ -23,7 +22,7 @@ interface Tab {
   content: string[];
 }
 
-const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ points, jobTitle, company, dates, challenge, skills, tools, projects }) => {
+const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ points, jobTitle, company, skills, tools, projects }) => {
   const tabs: Tab[] = [
 
     {
@@ -167,6 +166,9 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ points, jobTitle, compa
   }, []); // Empty dependency array means this runs once on mount
 
   const handleTabClick = (tab: Tab) => {
+    if (window.umami) {
+      window.umami.track(`Experience - ${jobTitle} - ${tab.name} Click`, { jobTitle: jobTitle, company: company });
+    }
     setActiveTab(tab); // Update active tab immediately
 
     // Animate underline immediately on click
@@ -222,12 +224,6 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ points, jobTitle, compa
 
   return (
     <div className="mt-4">
-      <div className="mb-6 text-center">
-        <h2 className="text-2xl font-bold text-gray-800">{jobTitle}</h2>
-        <h3 className="text-xl text-gray-600">{company}</h3>
-        <p className="text-gray-500">{dates}</p>
-        <p className="mt-2 text-gray-700 italic">{challenge}</p>
-      </div>
       <div 
         ref={tabsContainerRef} 
         className="flex border-b-2 border-gray-200 mb-4 relative"
@@ -262,14 +258,14 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ points, jobTitle, compa
             {showOverflowMenu && (
               <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
                 {tabs.slice(numVisibleTabs).map((tab) => (
-                  <li key={tab.name}>
                     <button
-                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left ${activeTab.name === tab.name ? 'bg-gray-100 text-black' : 'text-gray-600'}`}
+                      key={tab.name}
+                      className={`block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 w-full text-left flex items-center ${activeTab.name === tab.name ? 'bg-gray-100 text-black' : 'text-gray-600'}`} 
                       onClick={() => handleTabClick(tab)}
                     >
+                      {tab.icon && <tab.icon className="mr-2" />}
                       {tab.name}
                     </button>
-                  </li>
                 ))}
               </div>
             )}

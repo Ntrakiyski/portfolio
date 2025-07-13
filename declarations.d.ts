@@ -5,6 +5,7 @@ declare module '*.css' {
 
 declare global {
   interface Window {
+
     gsap: any;
     ScrollToPlugin: any;
     umami: {

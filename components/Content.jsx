@@ -18,6 +18,10 @@ const Job = ({ title, company, dates, challenge, points, summarizedPoints, skill
     <ExperienceTabs 
       points={points} 
       summarizedPoints={summarizedPoints} 
+      jobTitle={title} 
+      company={company} 
+      dates={dates} 
+      challenge={challenge} 
       skills={skills.list} 
       tools={tools.list} 
       projects={projects.list} 
