@@ -1,6 +1,6 @@
 // src/components/Content.jsx
 import React from 'react';
-import contentData from '../data/content.json';
+
 import { FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import SectionDivider from './SectionDivider';
 import ExperienceTabs from './ExperienceTabs';
@@ -74,7 +74,7 @@ const ContactBadges = ({ badges }) => {
         const isLinkedIn = badge.type === 'linkedin';
         const linkProps = (badge.type === 'email' || badge.type === 'phone') ? {} : { target: '_blank', rel: 'noopener noreferrer' };
 
-        const baseBadgeClasses = "inline-flex items-center px-3 py-1 rounded-full transition-colors duration-200";
+        const baseBadgeClasses = "inline-flex items-center px-3 py-1 -full transition-colors duration-200";
         const badgeClasses = isLinkedIn
           ? `${baseBadgeClasses} bg-gray-100 text-gray-700 border border-gray-200 hover:bg-gray-200`
           : `${baseBadgeClasses} bg-gray-100 text-gray-700 border border-gray-200 hover:bg-gray-200`;
@@ -119,7 +119,7 @@ const SectionWrapper = ({ id, sectionRef, isHighlighted, children }) => {
       className={`scroll-mt-10 ${id === 'contact' ? 'text-center pb-8' : ''}`}
     >
       <div className={`
-        px-4 rounded-xl
+        px-4 lg:px-8 -xl
         ${isHighlighted ? 'animate-section-highlight' : ''}
       `}>
         {children}
@@ -130,8 +130,8 @@ const SectionWrapper = ({ id, sectionRef, isHighlighted, children }) => {
 
 
 // Main Content Component
-const Content = ({ sectionRefs, visualHighlightedSection }) => {
-  const { mainContent } = contentData;
+const Content = ({ contentData, sectionRefs, visualHighlightedSection }) => {
+  const { mainContent } = { mainContent: contentData };
 
   return (
     <>
@@ -147,16 +147,29 @@ const Content = ({ sectionRefs, visualHighlightedSection }) => {
       <SectionDivider />
 
       {/* Experience Section */}
-      <SectionWrapper id="experience" sectionRef={sectionRefs.experience} isHighlighted={visualHighlightedSection === 'experience'}>
+      <div id="experience" ref={sectionRefs.experience}>
         <h2 className="text-3xl font-bold mb-8 text-black">{mainContent.experience.title}</h2>
         <div className="space-y-12">
-          {mainContent.experience.jobs.map((job, index) => <Job key={index} {...job} />)}
+          {mainContent.experience.jobs.map((job, index) => {
+            const jobId = `job-${index}`;
+            return (
+              <SectionWrapper
+                key={jobId}
+                id={jobId}
+                sectionRef={sectionRefs[jobId]}
+                isHighlighted={visualHighlightedSection === jobId}
+              >
+                <Job {...job} />
+              </SectionWrapper>
+            );
+          })}
         </div>
-      </SectionWrapper>
+      </div>
 
       <SectionDivider />
 
-      {/* Skills Section */}
+      {/* Skills Section - Hidden */}
+      {/*
       <SectionWrapper id="skills" sectionRef={sectionRefs.skills} isHighlighted={visualHighlightedSection === 'skills'}>
         <h2 className="text-3xl font-bold mb-8 text-black">{mainContent.skills.title}</h2>
         <div className="space-y-6">
@@ -165,8 +178,10 @@ const Content = ({ sectionRefs, visualHighlightedSection }) => {
       </SectionWrapper>
 
       <SectionDivider />
+      */}
 
-      {/* Why Me Section */}
+      {/* Why Me Section - Hidden */}
+      {/*
       <SectionWrapper id="why-me" sectionRef={sectionRefs['why-me']} isHighlighted={visualHighlightedSection === 'why-me'}>
         <h2 className="text-3xl font-bold mb-8 text-black">{mainContent.whyMe.title}</h2>
         {mainContent.whyMe.paragraphs.map((paragraph, index) => (
@@ -175,17 +190,20 @@ const Content = ({ sectionRefs, visualHighlightedSection }) => {
       </SectionWrapper>
 
       <SectionDivider />
+      */}
 
-      {/* Contact Section */}
+      {/* Contact Section - Hidden */}
+      {/*
       <SectionWrapper id="contact" sectionRef={sectionRefs.contact} isHighlighted={visualHighlightedSection === 'contact'}>
-        <h2 className="text-2xl font-bold mb-4 text-black">{mainContent.contactInfo.title}</h2>
+        <h2 className="text-3xl font-bold mb-4 text-black">{mainContent.contactInfo.title}</h2>
         <p className="text-gray-700 leading-relaxed mb-6 max-w-xl mx-auto">{mainContent.contactInfo.introParagraph}</p>
-        <div className="space-y-2 font-mono text-sm text-gray-800">
+        <div className="space-y-2 font-mono text-sm text-gray-800 mb-8">
           <p><strong>Email:</strong> <a href={`mailto:${mainContent.contactInfo.email}`} className="text-indigo-600 hover:underline">{mainContent.contactInfo.email}</a></p>
           <p><strong>Phone:</strong> <a href={`tel:${mainContent.contactInfo.phone}`} className="text-indigo-600 hover:underline">{mainContent.contactInfo.phone}</a></p>
           <p><strong>LinkedIn:</strong> <a href={`https://www.linkedin.com/in/${mainContent.contactInfo.linkedin.split('/').pop()}`} target="_blank" rel="noopener noreferrer" className="text-indigo-600 hover:underline">{mainContent.contactInfo.linkedin}</a></p>
         </div>
       </SectionWrapper>
+      */}
     </>
   );
 };

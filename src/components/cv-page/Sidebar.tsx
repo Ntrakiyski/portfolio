@@ -1,6 +1,6 @@
 // components/Sidebar.tsx
 import React, { useState, useEffect, useCallback } from 'react';
-import { navItems } from '../constants/navItems';
+import { navItems } from '../../../constants/navItems';
 
 // Import the destructured components
 import SidebarShell from './SidebarShell';
@@ -17,7 +17,6 @@ declare global {
 
 interface SidebarProps {
   activeSection: string;
-  setActiveSection: (section: string) => void;
   sidebarIsOpen: boolean; 
   setSidebarIsOpen: (value: boolean) => void; 
   scrollToSection: (href: string) => void; 
@@ -25,7 +24,6 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ 
   activeSection, 
-  setActiveSection, 
   sidebarIsOpen, 
   setSidebarIsOpen, 
   scrollToSection 
@@ -37,19 +35,34 @@ const Sidebar: React.FC<SidebarProps> = ({
     scrollToSection(href);
   }, [scrollToSection]); 
 
-  // Effect for keyboard shortcuts (Escape and 1-4 keys)
+  // Effect for keyboard shortcuts (Escape and 1-7 keys)
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
-        e.preventDefault(); 
+        e.preventDefault();
         setSidebarIsOpen(!sidebarIsOpen);
-      } 
-      else if (e.key >= '1' && e.key <= '4') { 
-        const index = parseInt(e.key) - 1; 
-        if (index >= 0 && index < navItems.length) {
-          const item = navItems[index];
-          e.preventDefault(); 
-          handleNavClick({ preventDefault: () => {} } as React.MouseEvent<HTMLAnchorElement>, item.href);
+      } else if (e.key >= '1' && e.key <= '9') { // Expanded to include all possible shortcuts
+        const shortcut = e.key;
+        let targetItem;
+
+        // Find the navigation item corresponding to the pressed shortcut key
+        for (const item of navItems) {
+          if (item.shortcut === shortcut && !item.subItems) {
+            targetItem = item;
+            break;
+          }
+          if (item.subItems) {
+            const subItem = item.subItems.find(sub => sub.shortcut === shortcut);
+            if (subItem) {
+              targetItem = subItem;
+              break;
+            }
+          }
+        }
+
+        if (targetItem) {
+          e.preventDefault();
+          handleNavClick({ preventDefault: () => {} } as React.MouseEvent<HTMLAnchorElement>, targetItem.href);
         }
       }
     };
@@ -59,7 +72,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     return () => {
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [handleNavClick, navItems, setSidebarIsOpen, sidebarIsOpen]);
+  }, [handleNavClick, setSidebarIsOpen, sidebarIsOpen]);
 
   return (
     <>

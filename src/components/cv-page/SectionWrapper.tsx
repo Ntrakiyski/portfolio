@@ -16,7 +16,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({ id, sectionRef, isHighl
       className={`scroll-mt-10 ${id === 'contact' ? 'text-center pb-8' : ''}`}
     >
       <div className={`
-        p-6 rounded-xl
+        p-6 -xl
         ${isHighlighted ? 'animate-section-highlight' : ''}
       `}>
         {children}

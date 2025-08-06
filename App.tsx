@@ -1,9 +1,25 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import Sidebar from './components/Sidebar';
-import MainContent from './components/MainContent';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import CvPage from './src/pages/CvPage';
+import HomePage from './src/pages/HomePage';
+import { Navbar } from './src/components/home-page';
 
+// Header component that conditionally renders Navbar
+const AppHeader = () => {
+  const location = useLocation();
+  // Only show Navbar on the homepage
+  if (location.pathname !== '/') {
+    return null;
+  }
+  return (
+    <header className="sticky top-0 z-50 bg-white">
+      <Navbar />
+    </header>
+  );
+};
 
-const App: React.FC = () => {
+// Main App content component
+const AppContent: React.FC = () => {
   const [activeSection, setActiveSection] = useState('about'); 
   const [highlightTarget, setHighlightTarget] = useState<string | null>(null);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(typeof window !== 'undefined' ? window.innerWidth >= 1024 : true); // App manages sidebar state
@@ -41,30 +57,38 @@ const App: React.FC = () => {
   }, [setHighlightTarget]); // Dependency on setHighlightTarget
 
   return (
-    <div className="bg-white text-black min-h-screen font-sans">
-
-      <Sidebar 
-        activeSection={activeSection} 
-        setActiveSection={setActiveSection} 
-        sidebarIsOpen={sidebarIsOpen} // Pass state
-        setSidebarIsOpen={setSidebarIsOpen} // Pass setter
-        scrollToSection={scrollToSection} // Pass shared scroll function
-      />
-      
-      <main 
-        className="flex justify-center md:p-12 
-                   ml-0 lg:ml-[220px] 
-                   flex-grow" 
-      >
-        <MainContent 
-          setActiveSection={setActiveSection} 
-          highlightTarget={highlightTarget} 
-          setHighlightTarget={setHighlightTarget} 
-        />
-      </main>
-
+    <div className="bg-gray-50 text-black min-h-screen font-sans flex justify-center">
+      <div className="relative w-full max-w-screen-lg bg-white md:border md:border-gray-200 md:shadow-lg">
+        <AppHeader />
+        <main>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route
+              path="/cv"
+              element={
+                <CvPage
+                  activeSection={activeSection}
+                  setActiveSection={setActiveSection}
+                  highlightTarget={highlightTarget}
+                  setHighlightTarget={setHighlightTarget}
+                  sidebarIsOpen={sidebarIsOpen}
+                  setSidebarIsOpen={setSidebarIsOpen}
+                  scrollToSection={scrollToSection}
+                />
+              }
+            />
+          </Routes>
+        </main>
+      </div>
     </div>
   );
 };
+
+// App component that wraps everything with Router
+const App: React.FC = () => (
+  <Router>
+    <AppContent />
+  </Router>
+);
 
 export default App;

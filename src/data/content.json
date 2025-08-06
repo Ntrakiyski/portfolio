@@ -1,0 +1,285 @@
+{
+  "mainContent": {
+    "hero": {
+      "tagline": "automating processes",
+      "headline": "Transforming Workflows with Intelligent Automation",
+      "description": "I turn complex business challenges into streamlined automated solutions, saving time and accelerating innovation. Bridging the gap between vision and execution.",
+      "primaryButton": "Book Free Call",
+      "secondaryButton": "See My Work",
+      "primaryButtonText": "Book Free Call",
+      "secondaryButtonText": "See My Work",
+      "secondaryButtonHref": "#projects"
+    },
+    "aboutMe": {
+      "tag": "About Me",
+      "headline": "My work lives in the space between a big-picture idea and the development that brings it to life. When a stakeholder describes a business problem, I don’t just map it out. I simultaneously architect the solution. This dual-minded approach eliminates the translation-gap between what the business wants and what developers can build.",
+      "paragraph1": ""
+    },
+
+   "projects": {
+    "tag": "Projects",
+    "headline": "What I've Built",
+    "description": "Real-world solutions that deliver measurable business impact through AI integration and process automation.",
+    "categories": [
+      {
+        "name": "AI Agents with Vector store and tools",
+        "detailedDescription": "I build intelligent AI systems that understand your data. These agents can ingest documents and websites, find the most relevant information using vector search, and provide accurate answers to complex questions, creating a powerful knowledge base you can interact with.",
+        "servicesInclude": [
+          "Custom RAG (Retrieval-Augmented Generation) pipeline development",
+          "Integration with vector databases (Qdrant, Pinecone)",
+          "Asynchronous job processing for handling large documents/websites",
+          "API design for AI services",
+          "Connecting LLMs to private data sources securely"
+        ],
+        "deliverables": [
+          "Deployed AI Chat/RAG application",
+          "Secure API for custom integrations",
+          "Source code and architecture diagrams",
+          "Vector database setup and configuration"
+        ],
+        "projects": [
+          {
+            "title": "PocketFlow RAG Chat Platform",
+            "description": "An end-to-end platform allowing users to upload documents or scrape websites and then chat with an AI that uses the content as its knowledge base. The system is split into a scalable FastAPI backend for data processing and a polished Next.js frontend for the user experience.",
+            "tech": ["FastAPI", "Celery", "Qdrant", "Next.js", "Supabase", "React"],
+            "imageUrl": "/project-rag-chat.png",
+            "liveUrl": "https://pocketflow-ui.worfklow.org/protected",
+            "githubUrl": "https://github.com/Ntrakiyski/rag-chat-pocketflow-fastapi"
+          }
+        ]
+      },
+      {
+        "name": "Full-stack web application",
+        "detailedDescription": "I architect and build complete web applications from concept to deployment. I handle everything from the backend logic and database design to the user-facing interface, ensuring the final product is robust, scalable, and solves a real-world business problem.",
+        "servicesInclude": [
+          "Full-stack development (Next.js, React)",
+          "Backend API development",
+          "Database architecture and management (MongoDB, Supabase/Postgres)",
+          "User authentication and management",
+          "Third-party service and API integration",
+          "Deployment and infrastructure setup"
+        ],
+        "deliverables": [
+          "Fully functional, deployed web application",
+          "Complete source code for frontend and backend",
+          "Database schema and design documents",
+          "Interactive and user-friendly UI"
+        ],
+        "projects": [
+          {
+            "title": "FreightFlow - Logistics Management System",
+            "description": "A comprehensive logistics application to manage loads, automate invoice generation, and handle proof-of-delivery documents. It features a webhook-based architecture using n8n for backend processing like OCR and database management.",
+            "tech": ["Next.js", "React 19", "MongoDB", "n8n", "TailwindCSS"],
+            "imageUrl": "/project-freightflow.png",
+            "liveUrl": "https://trucky.worfklow.org",
+            "githubUrl": "https://github.com/ntrakiyski/trucky"
+          },
+          {
+            "title": "PM Mentality Mentorship Platform",
+            "description": "Designed and developed the public-facing website for a non-profit. The site serves as the marketing platform, registration portal, and resource hub, managing the entire participant journey from discovery to program completion.",
+            "tech": ["Next.js", "Web Design", "Forms", "Static Site Generation"],
+            "imageUrl": "/project-pmmentality.png",
+            "liveUrl": "https://pmmentality.com/",
+            "githubUrl": null
+          }
+        ]
+      },
+      {
+        "name": "Workflow automations",
+        "detailedDescription": "I analyze your manual business processes, identify the repetitive tasks and bottlenecks, and build automated systems to handle them. By integrating APIs and building custom workflows, I can turn multi-hour manual tasks into processes that run in minutes.",
+        "servicesInclude": [
+          "Business process analysis",
+          "Workflow automation using tools like n8n or Celery",
+          "Custom script and bot development",
+          "API integration for system-to-system communication",
+          "Automated data extraction (OCR) and processing",
+          "ETL (Extract, Transform, Load) pipelines"
+        ],
+        "deliverables": [
+          "Deployed automation workflows",
+          "Process flow diagrams showing the new, efficient process",
+          "Efficiency improvement reports (e.g., hours saved)",
+          "Integration documentation for connected systems"
+        ],
+        "projects": [
+          {
+            "title": "Automated Data Processing for Fast Track",
+            "description": "Architected and built an automated system that eliminated 80% of manual data processing. This transformed a 3-hour daily task into a fully automated workflow by mapping existing processes and identifying exactly where APIs could replace human intervention.",
+            "tech": ["N8N", "Custom APIs", "Process Mapping", "Workflow Automation"],
+            "imageUrl": "/project-automation.png",
+            "liveUrl": null,
+            "githubUrl": null
+          }
+        ]
+      },
+      {
+        "name": "Dashboards",
+        "detailedDescription": "I build interactive dashboards that transform complex data into clear, actionable insights. These tools provide a real-time, centralized view of your operations, enabling you to track key metrics and make data-driven decisions with confidence.",
+        "servicesInclude": [
+          "Custom dashboard design and development",
+          "Integration with multiple data sources (Databases, APIs)",
+          "Interactive data visualization (tables, charts, filters)",
+          "Real-time data updates",
+          "Role-based access control"
+        ],
+        "deliverables": [
+          "Deployed interactive dashboard application",
+          "Data models and schemas",
+          "Custom data visualization components",
+          "A centralized view of your business operations"
+        ],
+        "projects": [
+          {
+            "title": "Logistics Management Dashboard",
+            "description": "The core of the FreightFlow application is a dashboard that allows users to create, view, filter, and manage all logistics loads in a single interface. It provides at-a-glance visibility into the entire operation, from pickup to delivery and payment.",
+            "tech": ["Next.js", "React", "MongoDB", "Data Visualization", "TailwindCSS"],
+            "imageUrl": "/project-dashboard.png",
+            "liveUrl": "https://trucky.worfklow.org",
+            "githubUrl": "https://github.com/ntrakiyski/trucky"
+          }
+        ]
+      }
+    ]
+  },
+    "experience": {
+      "tag": "Expertise",
+      "headline": "My Core Competencies",
+      "experience_list": [
+        {
+          "image": "https://www.boki.io/feature-posts.png",
+          "title": "AI Engineer",
+          "description": "Building intelligent systems that automate complex workflows and deliver measurable business impact through AI integration and machine learning."
+        },
+        {
+          "image": "https://www.boki.io/feature-code.png",
+          "title": "Product Manager",
+          "description": "Translating business vision into technical reality by bridging the gap between stakeholders and development teams, ensuring products solve real problems."
+        },
+        {
+          "image": "https://www.boki.io/feature-mdx.png",
+          "title": "No-code Developer",
+          "description": "Rapidly building and deploying solutions using low-code platforms to eliminate manual processes and accelerate time-to-market for business initiatives."
+        }
+      ]
+    },
+    "process": {
+      "tag": "Process",
+      "headline": "From Concept to Deployment",
+      "description": "I start by deeply understanding the problem, not just the symptoms. I map existing processes to identify inefficiencies, translate business requirements into technical specifications, build rapid prototypes for validation, and implement scalable solutions that automate repetitive tasks and empower teams to focus on creative problem-solving.",
+      "primaryButtonText": "Book Free Call",
+      "secondaryButtonText": "See Case Studies",
+      "steps": [
+        {
+          "id": "1",
+          "title": "Deep Problem Discovery",
+          "description": "I dive deep into your current processes to understand the real pain points, not just surface-level symptoms."
+        },
+        {
+          "id": "2",
+          "title": "Process Mapping & Analysis",
+          "description": "Map your existing workflows to identify bottlenecks and inefficiencies that are costing you time and money."
+        },
+        {
+          "id": "3",
+          "title": "Rapid Prototyping",
+          "description": "Build quick prototypes to validate solutions before full implementation, ensuring we're solving the right problem."
+        },
+        {
+          "id": "4",
+          "title": "Scalable Implementation",
+          "description": "Deploy production-ready solutions that scale with your business and continue to deliver value over time."
+        }
+      ]
+    },
+    "features": {
+      "tag": "Services",
+      "headline": "End-to-End AI Solutions",
+      "features_list": [
+        
+
+        {
+          "image": "https://www.boki.io/feature-content.png",
+          "title": "AI Integration and Process Automation",
+          "description": "Build systems that make humans 10x more effective by automating repetitive tasks. Turn 3-hour manual processes into 5-minute automated workflows."
+        },
+
+        {
+          "image": "https://www.boki.io/feature-code.png",
+          "title": "Full-Stack Product Development",
+          "description": "Build complete products from concept to deployment, ensuring credibility and faster iteration cycles. I can build, test, and deploy end-to-end solutions."
+        },
+
+        {
+          "image": "https://www.boki.io/feature-mdx.png",
+          "title": "Rapid Prototyping",
+          "description": "Quickly validate ideas with functional prototypes before investing in full development. Reduce risk and ensure market fit."
+        },
+
+        {
+          "image": "https://www.boki.io/feature-review.png",
+          "title": "Scalable Architecture",
+          "description": "Design systems that grow with your business. Build once, scale infinitely with proper technical foundations."
+        },
+        {
+          "image": "https://www.boki.io/feature-posts.png",
+          "title": "Business-to-Technical Translation",
+          "description": "Bridge the gap between business vision and technical implementation. I speak fluent CEO and developer, ensuring your ideas become reality."
+        },
+
+        {
+          "image": "https://www.boki.io/feature-technical-reviews.png",
+          "title": "Team Mentorship",
+          "description": "Upskill your team with modern development practices and AI integration techniques. Build internal capability for long-term success."
+        }
+      ]
+    },
+    "liveDemos": {
+    "tag": "Latest Projects",
+    "headline": "See My Work in Action",
+    "description": "I build real applications, not just mockups. Explore these interactive projects to see how I combine AI, automation, and full-stack development to solve real-world problems.",
+    "demos_list": [
+      {
+        "icon": "/icons/api-backend.svg",
+        "title": "PocketFlow Backend API",
+        "description": "A scalable backend API built with Pocketflow and FastAPI that powers an AI chat application. It uses Celery for asynchronous background tasks like ingesting and processing documents, ensuring the system is both responsive and powerful.",
+        "githubLink": "https://github.com/Ntrakiyski/rag-chat-pocketflow-fastapi",
+        "liveLink": null,
+        "status": "In progress"
+      },
+      {
+        "icon": "/icons/ai-agent.svg",
+        "title": "PocketFlow Chat UI",
+        "description": "A modern frontend built with Next.js and React, providing a seamless user experience for the AI chat application. It integrates Supabase for secure user authentication and communicates with the custom FastAPI backend.",
+        "githubLink": "https://github.com/ntrakiyski/pocketflow-rag-chat-ui",
+        "liveLink": "https://pocketflow-ui.worfklow.org/protected",
+        "status": "In progress"
+      },
+      {
+        "icon": "/icons/dashboard.svg",
+        "title": "FreightFlow Logistics Dashboard",
+        "description": "A full-stack logistics management app built with Next.js and MongoDB. It streamlines operations by automating invoice generation and document handling through a webhook-based architecture powered by n8n.",
+        "githubLink": "https://github.com/ntrakiyski/trucky",
+        "liveLink": "https://trucky.worfklow.org",
+        "status": "Done"
+      },
+      {
+        "icon": "/icons/web-app.svg",
+        "title": "PM Mentality Platform",
+        "description": "A professional website built with Next.js for a non-profit mentorship program. It serves as a complete platform for marketing, participant registration, and resource sharing within a clean and modern design.",
+        "githubLink": null,
+        "liveLink": "https://pmmentality.com/",
+        "status": "Done"
+      }
+    ]
+  },
+    "contactSection": {
+      "tag": "Let's Connect",
+      "headline": "Get in Touch",
+      "description": "Ready to discuss how I can help your team move faster and build better products? Let's talk about your specific challenges and how my combination of technical skills and product thinking can solve them.",
+      "emailLinkText": "Book Free Call",
+      "emailLinkHref": "mailto:nikolay.trakiyski@gmail.com?subject=Free Strategy Call Request",
+      "phone": "+359893401356",
+      "linkedin": "linkedin.com/in/nikolaytrakiyski"
+    }
+  }
+}

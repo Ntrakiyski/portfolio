@@ -32,7 +32,7 @@ const SidebarShell: React.FC<SidebarShellProps> = ({ sidebarIsOpen, setSidebarIs
   return (
     <aside 
       ref={sidebarRef}
-      className={`fixed bottom-5 lg:bottom-auto left-5 lg:top-5 bg-white/80 backdrop-blur-sm border border-gray-200 rounded-lg shadow-lg z-10 transition-all duration-700 ease-in-out ${sidebarIsOpen ? 'w-[270px] lg:w-80' : 'w-[142px] lg:w-48'}`}>
+      className={`fixed bottom-5 lg:bottom-auto left-5 lg:top-5 bg-white/80 backdrop-blur-sm border border-gray-200 -lg shadow-lg z-10 transition-all duration-700 ease-in-out ${sidebarIsOpen ? 'w-[270px] lg:w-80' : 'w-[142px] lg:w-48'}`}>
       <div className={`transition-all duration-700 ease-in-out ${sidebarIsOpen ? 'p-6' : 'p-3'}`}>
         <div
           role="button"

@@ -1,0 +1,11 @@
+export { default as Navbar } from './Navbar';
+export { default as Hero } from './Hero';
+export { default as Features } from './Features';
+export { default as AboutMe } from './AboutMe';
+export { default as Projects } from './Projects';
+export { default as Experience } from './Experience';
+export { default as Contact } from './Contact';
+export { default as Process } from './Process';
+export { default as LiveDemos } from './LiveDemos';
+export { default as Footer } from './Footer';
+export { AnimatedSliderText } from './AnimatedSliderText';

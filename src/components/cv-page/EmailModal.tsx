@@ -28,11 +28,11 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose }) => {
       onClick={onClose}
     >
       <div
-        className="bg-white rounded-lg shadow-xl p-6 m-4 max-w-sm w-full animate-in fade-in-0 zoom-in-95"
+        className="bg-white -lg shadow-xl p-6 m-4 max-w-sm w-full animate-in fade-in-0 zoom-in-95"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex justify-between items-center mb-4">
-          <h3 className="text-lg font-semibold text-gray-900">Choose your email client</h3>
+          <h3 className="text-lg font-semibold text-gray-900">Which app do you choose?</h3>
           <button onClick={onClose} aria-label="Close" className="text-gray-400 hover:text-gray-600">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -44,7 +44,7 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose }) => {
             href={gmailLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 text-sm font-semibold rounded-lg text-white bg-[#DB4437] hover:bg-[#C53D30] transition-colors"
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 text-sm font-semibold text-white bg-[#DB4437] hover:bg-[#C53D30] transition-colors"
           >
             <IoLogoGoogle className="w-5 h-5" />
             Open in Gmail
@@ -53,7 +53,7 @@ const EmailModal: React.FC<EmailModalProps> = ({ isOpen, onClose }) => {
             href={outlookLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full flex items-center justify-center gap-3 px-4 py-3 text-sm font-semibold rounded-lg text-white bg-[#0078D4] hover:bg-[#005A9E] transition-colors"
+            className="w-full flex items-center justify-center gap-3 px-4 py-3 text-sm font-semibold text-white bg-[#0078D4] hover:bg-[#005A9E] transition-colors"
           >
             <IoMdMail className="w-5 h-5" />
             Open in Outlook

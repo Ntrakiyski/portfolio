@@ -235,7 +235,7 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ points, jobTitle, compa
           <button
             key={tab.name}
             ref={(el) => { if (el) tabRefs.current.set(tab.name, el); }}
-            className={`px-4 py-2 text-sm font-medium rounded-t-lg focus:outline-none flex items-center ${activeTab.name === tab.name ? 'bg-white text-black' : 'text-gray-500 hover:text-gray-700'}`}
+            className={`px-4 py-2 text-sm  -t-lg focus:outline-none flex items-center ${activeTab.name === tab.name ? 'bg-white text-black' : 'text-gray-500 hover:text-gray-700'}`}
             onClick={() => handleTabClick(tab)}
           >
             {tab.icon && <tab.icon className="mr-2" />} 
@@ -250,13 +250,13 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ points, jobTitle, compa
         {tabs.length > numVisibleTabs && (
           <div className="relative ml-auto" ref={overflowMenuRef}>
             <button
-              className={`py-2 px-4 text-sm font-medium flex items-center text-gray-500`}
+              className={`py-2 px-4 text-sm  flex items-center text-gray-500`}
               onClick={() => setShowOverflowMenu(!showOverflowMenu)}
             >
               <BsThreeDots className="mr-2" />
             </button>
             {showOverflowMenu && (
-              <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
+              <div className="absolute right-0 mt-2 w-48 bg-white border border-gray-200 -md shadow-lg z-10">
                 {tabs.slice(numVisibleTabs).map((tab) => (
                     <button
                       key={tab.name}
@@ -274,7 +274,7 @@ const ExperienceTabs: React.FC<ExperienceTabsProps> = ({ points, jobTitle, compa
       </div>
 
       <div 
-        className="p-4 rounded-md" 
+        className="p-4 -md" 
         ref={contentRef}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}

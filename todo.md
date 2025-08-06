@@ -1,2 +1,0 @@
-- make the navigation container full width in mobile
-- the arrows up and down should move the user to the next section or visible piece of content just like browsing a book. think which is better or preview it

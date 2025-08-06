@@ -1,13 +1,8 @@
 // src/components/MobileSectionNavigator.tsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import gsap from 'gsap';
 import { FaChevronUp, FaChevronDown } from 'react-icons/fa'; // Import arrow icons
-
-interface NavItem {
-  name: string;
-  href: string;
-  shortcut: string;
-}
+import { NavItem } from '../../../types'; // Import the correct NavItem type
 
 interface MobileSectionNavigatorProps {
   activeSection: string;
@@ -47,12 +42,23 @@ const MobileSectionNavigator: React.FC<MobileSectionNavigatorProps> = ({
       }
     }
   }, [sidebarIsOpen]);
-  const currentSectionIndex = navItems.findIndex(
+  const flatNavItems = useMemo(() => {
+    const items: NavItem[] = [];
+    navItems.forEach(item => {
+      items.push({ ...item, subItems: undefined }); // Add parent item without sub-items
+      if (item.subItems) {
+        items.push(...item.subItems);
+      }
+    });
+    return items;
+  }, [navItems]);
+
+  const currentSectionIndex = flatNavItems.findIndex(
     (item) => item.href.substring(1) === activeSection
   );
 
   const canScrollUp = currentSectionIndex > 0;
-  const canScrollDown = currentSectionIndex < navItems.length - 1;
+  const canScrollDown = currentSectionIndex < flatNavItems.length - 1;
 
   const handleScroll = (direction: 'up' | 'down') => {
     let targetIndex = -1;
@@ -64,7 +70,7 @@ const MobileSectionNavigator: React.FC<MobileSectionNavigatorProps> = ({
     }
 
     if (targetIndex !== -1) {
-      scrollToSection(navItems[targetIndex].href);
+      scrollToSection(flatNavItems[targetIndex].href);
     }
   };
 
@@ -72,7 +78,7 @@ const MobileSectionNavigator: React.FC<MobileSectionNavigatorProps> = ({
   const arrowButtonClasses = `
     w-12 h-12 flex items-center justify-center 
     bg-white/80 backdrop-blur-sm border border-gray-200 
-    rounded-lg shadow-lg text-gray-400 hover:text-black 
+    shadow-lg text-gray-400 hover:text-black 
     hover:bg-gray-100 transition-colors cursor-pointer
     focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2
   `;
