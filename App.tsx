@@ -59,7 +59,7 @@ const AppContent: React.FC = () => {
   return (
     <div className="bg-gray-50 text-black min-h-screen font-sans flex justify-center">
       <div className="relative w-full max-w-screen-lg bg-white md:border md:border-gray-200 md:shadow-lg">
-        <AppHeader />
+        {/* <AppHeader /> */}
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />

@@ -5,7 +5,7 @@ import Booker from '../components/home-page/Booker';
 const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen items-center">
-      <main className="flex-grow">
+      {/* <main className="flex-grow">
         <Hero />
         <Booker />
         <Features />
@@ -14,7 +14,7 @@ const HomePage: React.FC = () => {
         <Experience />
         <Process />
         <Contact />
-      </main>
+      </main> */}
       <Footer />
     </div>
   );
