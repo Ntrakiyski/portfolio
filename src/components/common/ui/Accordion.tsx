@@ -105,7 +105,7 @@ const AccordionItem = React.forwardRef<HTMLDivElement, AccordionItemProps>(
         ref={ref}
         data-value={value}
         className={cn(
-          "border-b border-gray-200 first:rounded-t-lg last:rounded-b-lg overflow-hidden",
+          "border-b border-gray-200 overflow-hidden",
           className
         )}
         {...props}

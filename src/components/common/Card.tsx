@@ -38,7 +38,7 @@ const Card: React.FC<CardProps> = ({
             {/*
             <div className="absolute bottom-0 right-0">
               <div className="relative w-40 h-[60px]">
-                <div className="absolute bottom-0 right-0 w-full h-full bg-black rounded-tl-[40px] shadow-[0_6px_16px_rgba(0,0,0,0.08)] ring-1 ring-black/5" />
+                <div className="absolute bottom-0 right-0 w-full h-full bg-black shadow-[0_6px_16px_rgba(0,0,0,0.08)] ring-1 ring-black/5" />
               </div>
             </div>
             */}

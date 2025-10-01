@@ -1,20 +1,20 @@
 import React from 'react';
-import { Hero, Features, AboutMe, Projects, Experience, Process, Contact, Footer, LiveDemos } from '../components/home-page';
-import Booker from '../components/home-page/Booker';
+import { Hero, Footer } from '../components/home-page';
+import AboutMe from '../components/home-page/AboutMe';
+import Services from '../components/home-page/Services';
+import ProjectCards from '../components/home-page/ProjectCards';
+import Cta from '../components/home-page/Cta';
 
 const HomePage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen items-center">
-      {/* <main className="flex-grow">
+      <main className="flex-grow">
         <Hero />
-        <Booker />
-        <Features />
         <AboutMe />
-        <Projects />
-        <Experience />
-        <Process />
-        <Contact />
-      </main> */}
+        <Services />
+        <ProjectCards />
+        <Cta />
+      </main>
       <Footer />
     </div>
   );

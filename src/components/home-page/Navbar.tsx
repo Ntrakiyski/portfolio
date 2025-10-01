@@ -35,7 +35,7 @@ const Navbar = () => {
             {/* Desktop Navigation */}
             <nav className="hidden md:flex items-center space-x-10">
               <a href="#about" onClick={handleScroll} className="text-base text-gray-500 hover:text-primary-text transition-colors">About</a>
-              <a href="#features" onClick={handleScroll} className="text-base text-gray-500 hover:text-primary-text transition-colors">Services</a>
+              <a href="#services" onClick={handleScroll} className="text-base text-gray-500 hover:text-primary-text transition-colors">Services</a>
               <a href="#projects" onClick={handleScroll} className="text-base text-gray-500 hover:text-primary-text transition-colors">Projects</a>
               <a
                 href="/book-a-call"
@@ -70,7 +70,7 @@ const Navbar = () => {
         <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center md:hidden">
           <nav className="flex flex-col items-center space-y-8">
             <a href="#about" onClick={handleMobileLinkClick} className="text-2xl text-gray-600 hover:text-primary-text transition-colors">About</a>
-            <a href="#features" onClick={handleMobileLinkClick} className="text-2xl text-gray-600 hover:text-primary-text transition-colors">Services</a>
+            <a href="#services" onClick={handleMobileLinkClick} className="text-2xl text-gray-600 hover:text-primary-text transition-colors">Services</a>
             <a href="#projects" onClick={handleMobileLinkClick} className="text-2xl text-gray-600 hover:text-primary-text transition-colors">Projects</a>
             <a
               href="/book-a-call"
