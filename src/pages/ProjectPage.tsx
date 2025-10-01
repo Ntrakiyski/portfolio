@@ -22,6 +22,23 @@ const VideoPlaceholder = ({ title }: { title: string }) => (
 // Helper function to get tech explanations
 const getTechExplanation = (tech: string): string => {
   const explanations: { [key: string]: string } = {
+    'Telegram': 'Instant messaging platform for casual communication and bot integration.',
+    'Slack': 'Team collaboration platform perfect for business communication and workflow automation.',
+    'Codegen': 'AI-powered code generation platform that automatically writes production-ready code.',
+    'Figma': 'Design tool for creating and extracting UI specifications and design assets.',
+    'Dart': 'Modern project management tool for agile teams and workflow tracking.',
+    'Linear': 'Issue tracking system designed for high-performance software teams.',
+    'Jira': 'Comprehensive project management platform for enterprise software development.',
+    'Notion': 'All-in-one workspace for notes, docs, and project management.',
+    'Sentry': 'Error tracking and performance monitoring platform with AI-powered root cause analysis.',
+    'GitHub': 'Version control platform with integrated CI/CD pipelines for automated deployment.',
+    'Vercel': 'Frontend deployment platform optimized for Next.js and modern web frameworks.',
+    'Netlify': 'Web hosting platform with automated builds and serverless functions.',
+    'Umami': 'Privacy-focused web analytics platform for tracking user behavior.',
+    'Plausible': 'Simple, privacy-friendly analytics alternative to Google Analytics.',
+    'Gmail': 'Email platform for enterprise communication and automated notifications.',
+    'Outlook': 'Microsoft email service for professional correspondence and scheduling.',
+    'n8n': 'Self-hosted workflow automation platform for connecting multiple services.',
     'FastAPI': 'High-performance Python web framework for building APIs with automatic documentation.',
     'Celery': 'Distributed task queue for handling background jobs and asynchronous processing.',
     'Qdrant': 'Vector database optimized for similarity search and AI applications.',
@@ -29,21 +46,8 @@ const getTechExplanation = (tech: string): string => {
     'Supabase': 'Open-source Firebase alternative with real-time database and authentication.',
     'React': 'JavaScript library for building interactive user interfaces with components.',
     'MongoDB': 'NoSQL document database for flexible, scalable data storage.',
-    'n8n': 'Workflow automation tool for connecting different services and APIs.',
     'TailwindCSS': 'Utility-first CSS framework for rapid UI development.',
     'React 19': 'Latest version of React with improved performance and new features.',
-    'Scrapy': 'Python framework for extracting data from websites efficiently.',
-    'Selenium': 'Browser automation tool for web scraping and testing.',
-    'Pandas': 'Data manipulation library for analyzing and processing structured data.',
-    'Plotly': 'Interactive data visualization library for creating charts and graphs.',
-    'Node.js': 'JavaScript runtime for building scalable server-side applications.',
-    'TensorFlow.js': 'Machine learning library for training and deploying AI models in browsers.',
-    'Google Calendar API': 'Integration service for accessing and managing calendar data.',
-    'Trello API': 'Service for connecting with Trello boards and project management data.',
-    'Gmail API': 'Google service for programmatically accessing and managing email.',
-    'Redis': 'In-memory data store used for caching and session management.',
-    'NLP': 'Natural Language Processing for understanding and generating human language.',
-    'Python': 'Versatile programming language excellent for AI, automation, and data processing.',
     'Web Design': 'User interface and experience design for creating engaging websites.',
     'Forms': 'Interactive elements for collecting and processing user input.',
     'Static Site Generation': 'Pre-building web pages for faster loading and better SEO.',
@@ -51,7 +55,8 @@ const getTechExplanation = (tech: string): string => {
     'Process Mapping': 'Analyzing and documenting business workflows for optimization.',
     'Workflow Automation': 'Streamlining repetitive tasks through automated processes.',
     'Data Visualization': 'Creating visual representations of data for better insights.',
-    'OCR': 'Optical Character Recognition for extracting text from images and documents.'
+    'OCR': 'Optical Character Recognition for extracting text from images and documents.',
+    'N8N': 'Workflow automation tool for connecting different services and APIs.'
   };
   
   return explanations[tech] || 'Specialized technology used in this project implementation.';
@@ -59,6 +64,29 @@ const getTechExplanation = (tech: string): string => {
 
 // Industry-specific use cases data
 const industryUseCases = {
+  'ai-powered-software-development-agent': {
+    'Startups & Entrepreneurs': [
+      'Solo founders launching MVPs without hiring expensive development teams',
+      'Non-technical entrepreneurs testing business ideas before major investment',
+      'Startup teams reducing time-to-market from months to weeks',
+      'Bootstrapped companies minimizing burn rate while building core products',
+      'Idea-stage founders validating concepts with working prototypes'
+    ],
+    'Small Businesses': [
+      'Local businesses digitizing operations without IT departments',
+      'Service providers automating booking and customer management systems',
+      'Retailers launching e-commerce platforms on tight budgets',
+      'Consultants building custom client portals and reporting tools',
+      'Agencies creating internal tools to streamline operations'
+    ],
+    'Enterprise & Corporate': [
+      'Innovation teams rapidly prototyping new digital initiatives',
+      'Internal tool development without overwhelming IT departments',
+      'Department leaders building custom workflows without IT bottlenecks',
+      'Digital transformation projects with reduced development costs',
+      'Proof-of-concept development for executive approval processes'
+    ]
+  },
   'pocketflow-rag-chat-platform': {
     'Healthcare': [
       'Medical professionals accessing patient history and treatment protocols instantly',
@@ -207,12 +235,29 @@ const ProjectPage = () => {
               subtitle=""
             />
             <div className="mt-8">
-              <p className="text-gray-600 text-lg leading-relaxed max-w-4xl">
+              <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mb-6">
                 {/* Generate problem statement based on project type */}
+                {project.title.includes('AI-Powered') && "Building software traditionally requires large teams of 5 to 10+ people coordinating complex communication and workflows. Critical requirements frequently get lost or misunderstood as ideas pass through project managers, developers, and designers. This leads to time delays, cost overruns, and frustration due to miscommunication."}
                 {project.title.includes('RAG') && "Organizations struggle with information silos where critical knowledge is scattered across documents, websites, and databases. Teams waste hours searching for answers that should be instantly accessible, leading to delayed decisions and repeated work."}
                 {project.title.includes('FreightFlow') && "Logistics companies face complex operational challenges with manual invoice generation, scattered documentation, and inefficient load management. This results in delayed payments, lost paperwork, and reduced operational efficiency."}
                 {project.title.includes('Automated') && "Businesses lose countless hours on repetitive manual tasks that could be automated. These processes are prone to human error, create bottlenecks, and prevent teams from focusing on high-value strategic work."}
               </p>
+              {project.title.includes('AI-Powered') && (
+                <div className="space-y-4 mt-6">
+                  <div className="bg-white border-l-4 border-red-500 p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">Multiple Handoffs = Lost Details</h4>
+                    <p className="text-gray-600">Ideas are communicated verbally or in writing to project managers, who translate them to developers and designers. Each handoff increases the chances of crucial details being lost or misinterpreted.</p>
+                  </div>
+                  <div className="bg-white border-l-4 border-red-500 p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">Fear Holds Creators Back</h4>
+                    <p className="text-gray-600">Many idea owners hesitate to start because they fear they lack technical skills, worry about wasting money, or fear security issues like hacks or downtime.</p>
+                  </div>
+                  <div className="bg-white border-l-4 border-red-500 p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">Coordination Overhead Slows Everything</h4>
+                    <p className="text-gray-600">Teams rely heavily on meetings, emails, and assorted tools to sync up, slowing development and inflating costs significantly.</p>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </SectionWrapper>
@@ -226,14 +271,48 @@ const ProjectPage = () => {
               subtitle=""
             />
             <div className="mt-8">
-              <p className="text-gray-600 text-lg leading-relaxed max-w-4xl">
+              <p className="text-gray-600 text-lg leading-relaxed max-w-4xl mb-6">
                 {project.description}
               </p>
-              <div className="mt-8 bg-gray-100 p-6 border border-gray-300">
-                <p className="text-gray-600 italic text-center">
-                  [Architecture diagram will be displayed here]
-                </p>
-              </div>
+              {project.title.includes('AI-Powered') && (
+                <div className="space-y-6 mt-8">
+                  <div className="bg-gradient-to-r from-green-50 to-blue-50 border-l-4 border-green-500 p-6">
+                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                      <span className="text-2xl">💬</span>
+                      Step 1: Share Your Idea Naturally
+                    </h4>
+                    <p className="text-gray-700">Start by sharing your idea with the AI agent via Telegram, Slack, or your preferred platform in a casual chat or voice message—no coding skills needed. The AI acts as your personal software expert, asking the right questions to clarify and complete your version 1 requirements.</p>
+                  </div>
+                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-l-4 border-blue-500 p-6">
+                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                      <span className="text-2xl">📋</span>
+                      Step 2: Automatic Documentation
+                    </h4>
+                    <p className="text-gray-700">All requirements and project details are automatically documented in your project management tool (Dart, Linear, Jira, or Notion), ensuring transparency and accuracy. No more lost requirements or forgotten details.</p>
+                  </div>
+                  <div className="bg-gradient-to-r from-purple-50 to-pink-50 border-l-4 border-purple-500 p-6">
+                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                      <span className="text-2xl">🤖</span>
+                      Step 3: AI Orchestrates Everything
+                    </h4>
+                    <p className="text-gray-700">The AI orchestrates automatic code generation with Codegen, design extraction with Figma, testing and error detection with Sentry, deployment via GitHub CI/CD + Vercel/Netlify, and user analytics with Umami/Plausible.</p>
+                  </div>
+                  <div className="bg-gradient-to-r from-pink-50 to-green-50 border-l-4 border-pink-500 p-6">
+                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                      <span className="text-2xl">🚀</span>
+                      Result: Faster, Cheaper, Better
+                    </h4>
+                    <p className="text-gray-700">A faster, cheaper, more reliable product build—where you're the one-person show confidently leading from idea to launch, free of miscommunication headaches. Reduce development time by 70% and costs by 80%.</p>
+                  </div>
+                </div>
+              )}
+              {!project.title.includes('AI-Powered') && (
+                <div className="mt-8 bg-gray-100 p-6 border border-gray-300">
+                  <p className="text-gray-600 italic text-center">
+                    [Architecture diagram will be displayed here]
+                  </p>
+                </div>
+              )}
             </div>
           </div>
         </SectionWrapper>
@@ -270,12 +349,15 @@ const ProjectPage = () => {
             <div className="mt-8">
               <p className="text-3xl font-bold text-gray-900">
                 {/* Generate duration based on project complexity */}
+                {project.title.includes('AI-Powered') && '1-2 weeks'}
                 {project.title.includes('RAG') && '3-4 months'}
                 {project.title.includes('FreightFlow') && '4-6 months'}
                 {project.title.includes('Automated') && '2-3 months'}
               </p>
               <p className="text-gray-600 mt-2">
-                From initial consultation to full deployment and team training
+                {project.title.includes('AI-Powered') 
+                  ? 'From idea to deployed MVP with the AI-powered workflow'
+                  : 'From initial consultation to full deployment and team training'}
               </p>
             </div>
           </div>

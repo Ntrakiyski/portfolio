@@ -22,7 +22,7 @@
     "description": "Real-world solutions that deliver measurable business impact through AI integration and process automation.",
     "categories": [
       {
-        "name": "AI Agents with Vector store and tools",
+        "name": "AI Agent",
         "detailedDescription": "I build intelligent AI systems that understand your data. These agents can ingest documents and websites, find the most relevant information using vector search, and provide accurate answers to complex questions, creating a powerful knowledge base you can interact with.",
         "servicesInclude": [
           "Custom RAG (Retrieval-Augmented Generation) pipeline development",
@@ -39,17 +39,29 @@
         ],
         "projects": [
           {
+            "title": "AI-Powered Software Development Agent",
+            "description": "A revolutionary one-person software development workflow powered by AI. Transform your app idea into a deployed product without large teams, miscommunication, or technical expertise. The AI agent orchestrates everything from requirements gathering to deployment using industry-leading tools.",
+            "tech": ["Telegram", "Slack", "Codegen", "Figma", "Dart", "Linear", "Jira", "Notion", "Sentry", "GitHub", "Vercel", "Netlify", "Umami", "Plausible", "Gmail", "Outlook", "n8n"],
+            "imageUrl": "/project-ai-agent.png",
+            "liveUrl": null,
+            "githubUrl": null,
+            "category": "AI Agent",
+            "featured": true
+          },
+          {
             "title": "PocketFlow RAG Chat Platform",
             "description": "An end-to-end platform allowing users to upload documents or scrape websites and then chat with an AI that uses the content as its knowledge base. The system is split into a scalable FastAPI backend for data processing and a polished Next.js frontend for the user experience.",
             "tech": ["FastAPI", "Celery", "Qdrant", "Next.js", "Supabase", "React"],
             "imageUrl": "/project-rag-chat.png",
             "liveUrl": "https://pocketflow-ui.worfklow.org/protected",
-            "githubUrl": "https://github.com/Ntrakiyski/rag-chat-pocketflow-fastapi"
+            "githubUrl": "https://github.com/Ntrakiyski/rag-chat-pocketflow-fastapi",
+            "category": "AI Agent",
+            "featured": false
           }
         ]
       },
       {
-        "name": "Full-stack web application",
+        "name": "Web App",
         "detailedDescription": "I architect and build complete web applications from concept to deployment. I handle everything from the backend logic and database design to the user-facing interface, ensuring the final product is robust, scalable, and solves a real-world business problem.",
         "servicesInclude": [
           "Full-stack development (Next.js, React)",
@@ -72,7 +84,9 @@
             "tech": ["Next.js", "React 19", "MongoDB", "n8n", "TailwindCSS"],
             "imageUrl": "/project-freightflow.png",
             "liveUrl": "https://trucky.worfklow.org",
-            "githubUrl": "https://github.com/ntrakiyski/trucky"
+            "githubUrl": "https://github.com/ntrakiyski/trucky",
+            "category": "Web App",
+            "featured": false
           },
           {
             "title": "PM Mentality Mentorship Platform",
@@ -80,12 +94,14 @@
             "tech": ["Next.js", "Web Design", "Forms", "Static Site Generation"],
             "imageUrl": "/project-pmmentality.png",
             "liveUrl": "https://pmmentality.com/",
-            "githubUrl": null
+            "githubUrl": null,
+            "category": "Website",
+            "featured": false
           }
         ]
       },
       {
-        "name": "Workflow automations",
+        "name": "Automation",
         "detailedDescription": "I analyze your manual business processes, identify the repetitive tasks and bottlenecks, and build automated systems to handle them. By integrating APIs and building custom workflows, I can turn multi-hour manual tasks into processes that run in minutes.",
         "servicesInclude": [
           "Business process analysis",
@@ -108,12 +124,14 @@
             "tech": ["N8N", "Custom APIs", "Process Mapping", "Workflow Automation"],
             "imageUrl": "/project-automation.png",
             "liveUrl": null,
-            "githubUrl": null
+            "githubUrl": null,
+            "category": "Automation",
+            "featured": false
           }
         ]
       },
       {
-        "name": "Dashboards",
+        "name": "Custom Tools",
         "detailedDescription": "I build interactive dashboards that transform complex data into clear, actionable insights. These tools provide a real-time, centralized view of your operations, enabling you to track key metrics and make data-driven decisions with confidence.",
         "servicesInclude": [
           "Custom dashboard design and development",
@@ -135,7 +153,9 @@
             "tech": ["Next.js", "React", "MongoDB", "Data Visualization", "TailwindCSS"],
             "imageUrl": "/project-dashboard.png",
             "liveUrl": "https://trucky.worfklow.org",
-            "githubUrl": "https://github.com/ntrakiyski/trucky"
+            "githubUrl": "https://github.com/ntrakiyski/trucky",
+            "category": "Custom Tools",
+            "featured": false
           }
         ]
       }

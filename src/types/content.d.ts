@@ -103,11 +103,17 @@ export interface HeroContent {
   secondaryButtonHref: string;
 }
 
+export type ProjectCategoryType = 'AI Agent' | 'Web App' | 'Automation' | 'Website' | 'Custom Tools';
+
 export interface ProjectItem {
   title: string;
   description: string;
   tech: string[];
   imageUrl: string;
+  liveUrl?: string;
+  githubUrl?: string | null;
+  category?: ProjectCategoryType;
+  featured?: boolean;
 }
 
 export interface ExperienceItem {

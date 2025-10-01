@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react';
-import { SectionWrapper } from '../common';
+import { SectionWrapper, CategoryBadge } from '../common';
 import SectionTitle from './SectionTitle';
 import SecondaryButton from '../common/SecondaryButton';
 import contentData from '../../data/content.json';
-import { ContentData } from '../../types/content';
+import { ContentData, ProjectCategoryType } from '../../types/content';
 import { gsap } from 'gsap';
 
 const ProjectCards = () => {
@@ -50,9 +50,17 @@ const ProjectCards = () => {
     category.projects.map(project => ({
       ...project,
       id: project.title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''),
-      category: category.name
+      category: (project.category || category.name) as ProjectCategoryType,
+      featured: project.featured || false
     }))
   );
+
+  // Sort projects: featured first
+  const sortedProjects = [...allProjects].sort((a, b) => {
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+    return 0;
+  });
 
   return (
     <SectionWrapper id="projects" className="py-24 sm:py-32 bg-gray-50">
@@ -64,31 +72,53 @@ const ProjectCards = () => {
         />
       </div>
       <div className="mx-auto max-w-screen-lg px-4 lg:px-8 mt-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {allProjects.map((project, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {sortedProjects.map((project, index) => (
             <div 
               key={index} 
               ref={(el) => cardsRef.current[index] = el}
-              className="group flex flex-col border border-gray-200 shadow-sm overflow-hidden bg-white hover:shadow-md transition-shadow"
+              className={`group flex flex-col border shadow-sm overflow-hidden bg-white hover:shadow-lg transition-all duration-300 ${
+                project.featured 
+                  ? 'md:col-span-2 border-purple-300 border-2 ring-2 ring-purple-100' 
+                  : 'border-gray-200'
+              }`}
             >
-              <div className="p-6 flex-grow flex flex-col">
-                <div className="mb-4">
+              {project.featured && (
+                <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 text-sm font-semibold">
+                  ⭐ Featured Project
+                </div>
+              )}
+              <div className={`p-6 flex-grow flex flex-col ${project.featured ? 'md:flex-row md:gap-8' : ''}`}>
+                <div className={`mb-4 ${project.featured ? 'md:w-1/2 md:mb-0' : ''}`}>
                   <img 
-                    src={`https://picsum.photos/400/200?random=${index + 1}`}
+                    src={`https://picsum.photos/seed/${project.id}/800/400`}
                     alt={project.title} 
-                    className="w-full h-48 object-cover"
+                    className={`w-full object-cover ${
+                      project.featured ? 'h-64 md:h-full' : 'h-48'
+                    }`}
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-3">{project.title}</h3>
-                <p className="text-gray-600 mb-6 flex-grow line-clamp-2">
-                  {project.description}
-                </p>
-                <div className="mt-auto">
-                  <SecondaryButton
-                    text="View Project"
-                    routeOrSection={`/project/${project.id}`}
-                    className="project-button"
-                  />
+                <div className={`flex flex-col flex-grow ${project.featured ? 'md:w-1/2' : ''}`}>
+                  <div className="mb-3">
+                    <CategoryBadge category={project.category} />
+                  </div>
+                  <h3 className={`font-semibold mb-4 ${
+                    project.featured ? 'text-2xl md:text-3xl' : 'text-xl'
+                  }`}>
+                    {project.title}
+                  </h3>
+                  {project.featured && (
+                    <p className="text-gray-600 mb-6 line-clamp-3">
+                      {project.description}
+                    </p>
+                  )}
+                  <div className="mt-auto pt-4">
+                    <SecondaryButton
+                      text="View Project"
+                      routeOrSection={`/project/${project.id}`}
+                      className="project-button w-full sm:w-auto"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
@@ -100,3 +130,4 @@ const ProjectCards = () => {
 };
 
 export default ProjectCards;
+
