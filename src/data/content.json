@@ -12,7 +12,7 @@
     },
     "aboutMe": {
       "tag": "About Me",
-      "headline": "My work lives in the space between a big-picture idea and the development that brings it to life. When a stakeholder describes a business problem, I don’t just map it out. I simultaneously architect the solution. This dual-minded approach eliminates the translation-gap between what the business wants and what developers can build.",
+      "headline": "I love figuring out how things work, then finding ways to make them better, faster, or even automatic. I'm good at seeing the whole picture from different angles, which helps me design and build the right solution. For me, it's about solving real problems and getting results quickly.",
       "paragraph1": ""
     },
 
@@ -41,17 +41,26 @@
           {
             "title": "AI-Powered Software Development Agent",
             "description": "A revolutionary one-person software development workflow powered by AI. Transform your app idea into a deployed product without large teams, miscommunication, or technical expertise. The AI agent orchestrates everything from requirements gathering to deployment using industry-leading tools.",
-            "tech": ["Telegram", "Slack", "Codegen", "Figma", "Dart", "Linear", "Jira", "Notion", "Sentry", "GitHub", "Vercel", "Netlify", "Umami", "Plausible", "Gmail", "Outlook", "n8n"],
-            "imageUrl": "/project-ai-agent.png",
+            "tech": ["Telegram/Slack", "Codegen", "Figma", "Dart/Linear/Jira/Notion", "Sentry", "GitHub", "Vercel & Netlify", "Umami & Plausible", "Gmail & Outlook", "n8n"],
+            "imageUrl": "http://localhost:5173/images/freightflow.png",
             "liveUrl": null,
             "githubUrl": null,
             "category": "AI Agent",
             "featured": true
           },
           {
-            "title": "PocketFlow RAG Chat Platform",
-            "description": "An end-to-end platform allowing users to upload documents or scrape websites and then chat with an AI that uses the content as its knowledge base. The system is split into a scalable FastAPI backend for data processing and a polished Next.js frontend for the user experience.",
-            "tech": ["FastAPI", "Celery", "Qdrant", "Next.js", "Supabase", "React"],
+            "title": "AI-Powered Client Context Assistant",
+            "description": "Connect your Gmail to instantly access up-to-date client information, emails, and context in one chat interface—eliminate scrolling through old conversations and stay prepared for meetings and onboardings.",
+            "tech": [
+              "Gmail API Integration",
+              "Next.js Chat Interface",
+              "AI Elements for Contextual Responses",
+              "Shadcn/UI Components",
+              "Email Drawer and Task Management",
+              "Built-in Logging",
+              "Vercel",
+              "Usage Metrics for Interactions"
+            ],
             "imageUrl": "/project-rag-chat.png",
             "liveUrl": "https://pocketflow-ui.worfklow.org/protected",
             "githubUrl": "https://github.com/Ntrakiyski/rag-chat-pocketflow-fastapi",
@@ -79,20 +88,20 @@
         ],
         "projects": [
           {
-            "title": "FreightFlow - Logistics Management System",
+            "title": "Automated Freight Logistics and Invoice Management System",
             "description": "A comprehensive logistics application to manage loads, automate invoice generation, and handle proof-of-delivery documents. It features a webhook-based architecture using n8n for backend processing like OCR and database management.",
             "tech": ["Next.js", "React 19", "MongoDB", "n8n", "TailwindCSS"],
-            "imageUrl": "/project-freightflow.png",
+            "imageUrl": "/images/freightflow.png",
             "liveUrl": "https://trucky.worfklow.org",
             "githubUrl": "https://github.com/ntrakiyski/trucky",
             "category": "Web App",
             "featured": false
           },
           {
-            "title": "PM Mentality Mentorship Platform",
-            "description": "Designed and developed the public-facing website for a non-profit. The site serves as the marketing platform, registration portal, and resource hub, managing the entire participant journey from discovery to program completion.",
-            "tech": ["Next.js", "Web Design", "Forms", "Static Site Generation"],
-            "imageUrl": "/project-pmmentality.png",
+            "title": "Custom Event Calendar and Automation Platform for Non-Profit Organization",
+            "description": "Built a comprehensive website for a non-profit mentorship organization, featuring a custom event calendar for scheduling workshops and sessions, integrated with n8n backend automation for seamless registration, notifications, and participant management throughout the program journey.",
+            "tech": ["Next.js", "Custom Event Calendar", "n8n Automation Backend", "Web Design", "Forms", "Static Site Generation"],
+            "imageUrl": "/images/pm-mentality.png",
             "liveUrl": "https://pmmentality.com/",
             "githubUrl": null,
             "category": "Website",
@@ -119,10 +128,10 @@
         ],
         "projects": [
           {
-            "title": "Automated Data Processing for Fast Track",
-            "description": "Architected and built an automated system that eliminated 80% of manual data processing. This transformed a 3-hour daily task into a fully automated workflow by mapping existing processes and identifying exactly where APIs could replace human intervention.",
-            "tech": ["N8N", "Custom APIs", "Process Mapping", "Workflow Automation"],
-            "imageUrl": "/project-automation.png",
+            "title": "AI-Powered Autonomous Scheduling & Execution Agent",
+            "description": "A two-stage AI workflow that handles meeting requests from email, chat, or API, intelligently schedules using calendar availability with human-in-the-loop approval via Telegram, and autonomously executes follow-ups: creating events in Google Calendar, sending Gmail confirmations, logging Asana tasks, and final alerts.",
+            "tech": ["n8n", "Gmail", "Telegram", "Google Calendar", "Asana", "Mistral AI", "Llama 3.3"],
+            "imageUrl": "http://localhost:5173/images/freightflow.png",
             "liveUrl": null,
             "githubUrl": null,
             "category": "Automation",
@@ -146,18 +155,7 @@
           "Custom data visualization components",
           "A centralized view of your business operations"
         ],
-        "projects": [
-          {
-            "title": "Logistics Management Dashboard",
-            "description": "The core of the FreightFlow application is a dashboard that allows users to create, view, filter, and manage all logistics loads in a single interface. It provides at-a-glance visibility into the entire operation, from pickup to delivery and payment.",
-            "tech": ["Next.js", "React", "MongoDB", "Data Visualization", "TailwindCSS"],
-            "imageUrl": "/project-dashboard.png",
-            "liveUrl": "https://trucky.worfklow.org",
-            "githubUrl": "https://github.com/ntrakiyski/trucky",
-            "category": "Custom Tools",
-            "featured": false
-          }
-        ]
+        "projects": []
       }
     ]
   },
@@ -213,43 +211,22 @@
     },
     "features": {
       "tag": "Services",
-      "headline": "End-to-End AI Solutions",
+      "headline": "What I Offer",
       "features_list": [
-        
-
         {
           "image": "https://www.boki.io/feature-content.png",
-          "title": "AI Integration and Process Automation",
-          "description": "Build systems that make humans 10x more effective by automating repetitive tasks. Turn 3-hour manual processes into 5-minute automated workflows."
+          "title": "AI Integration",
+          "description": "Integrate AI into your existing systems to enhance capabilities and enable intelligent automation."
         },
-
         {
           "image": "https://www.boki.io/feature-code.png",
-          "title": "Full-Stack Product Development",
-          "description": "Build complete products from concept to deployment, ensuring credibility and faster iteration cycles. I can build, test, and deploy end-to-end solutions."
+          "title": "Process Automation",
+          "description": "Automate repetitive tasks to make humans 10x more effective, turning 3-hour processes into 5-minute workflows."
         },
-
         {
           "image": "https://www.boki.io/feature-mdx.png",
-          "title": "Rapid Prototyping",
-          "description": "Quickly validate ideas with functional prototypes before investing in full development. Reduce risk and ensure market fit."
-        },
-
-        {
-          "image": "https://www.boki.io/feature-review.png",
-          "title": "Scalable Architecture",
-          "description": "Design systems that grow with your business. Build once, scale infinitely with proper technical foundations."
-        },
-        {
-          "image": "https://www.boki.io/feature-posts.png",
-          "title": "Business-to-Technical Translation",
-          "description": "Bridge the gap between business vision and technical implementation. I speak fluent CEO and developer, ensuring your ideas become reality."
-        },
-
-        {
-          "image": "https://www.boki.io/feature-technical-reviews.png",
-          "title": "Team Mentorship",
-          "description": "Upskill your team with modern development practices and AI integration techniques. Build internal capability for long-term success."
+          "title": "Full-Stack Product Development",
+          "description": "Build complete products from concept to deployment with end-to-end solutions for faster iterations."
         }
       ]
     },
@@ -260,7 +237,7 @@
     "demos_list": [
       {
         "icon": "/icons/api-backend.svg",
-        "title": "PocketFlow Backend API",
+        "title": "Scalable AI Chat Backend API",
         "description": "A scalable backend API built with Pocketflow and FastAPI that powers an AI chat application. It uses Celery for asynchronous background tasks like ingesting and processing documents, ensuring the system is both responsive and powerful.",
         "githubLink": "https://github.com/Ntrakiyski/rag-chat-pocketflow-fastapi",
         "liveLink": null,
@@ -268,7 +245,7 @@
       },
       {
         "icon": "/icons/ai-agent.svg",
-        "title": "PocketFlow Chat UI",
+        "title": "Modern AI Chat User Interface",
         "description": "A modern frontend built with Next.js and React, providing a seamless user experience for the AI chat application. It integrates Supabase for secure user authentication and communicates with the custom FastAPI backend.",
         "githubLink": "https://github.com/ntrakiyski/pocketflow-rag-chat-ui",
         "liveLink": "https://pocketflow-ui.worfklow.org/protected",
@@ -276,7 +253,7 @@
       },
       {
         "icon": "/icons/dashboard.svg",
-        "title": "FreightFlow Logistics Dashboard",
+        "title": "Comprehensive Logistics Management Dashboard",
         "description": "A full-stack logistics management app built with Next.js and MongoDB. It streamlines operations by automating invoice generation and document handling through a webhook-based architecture powered by n8n.",
         "githubLink": "https://github.com/ntrakiyski/trucky",
         "liveLink": "https://trucky.worfklow.org",
@@ -284,8 +261,8 @@
       },
       {
         "icon": "/icons/web-app.svg",
-        "title": "PM Mentality Platform",
-        "description": "A professional website built with Next.js for a non-profit mentorship program. It serves as a complete platform for marketing, participant registration, and resource sharing within a clean and modern design.",
+        "title": "Custom Event Calendar and Automation Platform for Non-Profit Organization",
+        "description": "A professional website built with Next.js for a non-profit mentorship organization, featuring custom event calendar integration and n8n backend automation. It serves as a complete platform for marketing, participant registration, event scheduling, and resource sharing within a clean and modern design.",
         "githubLink": null,
         "liveLink": "https://pmmentality.com/",
         "status": "Done"

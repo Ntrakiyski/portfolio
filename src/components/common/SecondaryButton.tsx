@@ -24,7 +24,7 @@ const SecondaryButton: React.FC<SecondaryButtonProps> = ({
   ...rest
 }) => {
   const baseClasses =
-    "group relative inline-block text-black text-sm py-3 px-5 uppercase text-center overflow-visible w-[160px]";
+    "group relative w-full sm:w-[160px] inline-block text-black text-sm py-3 px-5 uppercase text-center overflow-visible";
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     // If it's an in-page hash, smooth scroll and prevent default navigation

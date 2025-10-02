@@ -4,6 +4,7 @@ import AboutMe from '../components/home-page/AboutMe';
 import Services from '../components/home-page/Services';
 import ProjectCards from '../components/home-page/ProjectCards';
 import Cta from '../components/home-page/Cta';
+import Booker from '../components/home-page/Booker';
 
 const HomePage: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const HomePage: React.FC = () => {
         <Services />
         <ProjectCards />
         <Cta />
+        <Booker />
       </main>
       <Footer />
     </div>

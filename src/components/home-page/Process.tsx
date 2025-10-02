@@ -32,8 +32,8 @@ const Process = () => {
                   <div className="flex items-start gap-x-6">
                     <span className="text-xl text-gray-400 w-8 text-right flex-shrink-0">{step.id}</span>
                     <div className="flex-grow">
-                      <h3 className="text-xl text-primary-text">{step.title}</h3>
-                      <p className="mt-2 text-base text-gray-600">{step.description}</p>
+                      <h3 className="text-xl text-black">{step.title}</h3>
+                      <p className="mt-2 text-base text-gray-900">{step.description}</p>
                     </div>
                   </div>
                 </div>

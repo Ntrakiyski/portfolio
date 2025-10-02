@@ -21,7 +21,7 @@ const Features = () => {
           />
         </div>
         <div className="relative">
-          <div className="absolute inset-0 bg-gray-100"></div>
+          <div className="absolute inset-0 bg-white"></div>
           <div className="relative grid grid-cols-1 md:grid-cols-3">
             {featuresContent.features_list.map((feature: FeatureItem, index: number) => (
               <Card

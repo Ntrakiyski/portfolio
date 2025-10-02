@@ -1,22 +1,17 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { easeInOut } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import HomePage from './src/pages/HomePage';
 import ProjectPage from './src/pages/ProjectPage';
 import { Navbar } from './src/components/home-page';
+import ComingSoon from './src/components/common/ComingSoon';
 
 // Header component that conditionally renders Navbar
 const AppHeader = () => {
   const location = useLocation();
-  // Only show Navbar on the homepage
-  if (location.pathname !== '/') {
-    return null;
-  }
-  return (
-    <header className="sticky top-0 z-50 bg-white">
-      <Navbar />
-    </header>
-  );
+  // Show Navbar on all pages
+  return <Navbar />;
 };
 
 // Page transition variants
@@ -29,18 +24,16 @@ const pageVariants = {
     x: 0,
     opacity: 1,
     transition: {
-      type: 'tween',
       duration: 0.3,
-      ease: [0.4, 0, 0.2, 1], // ease-in-out
+      ease: easeInOut
     },
   },
   exit: (direction: number) => ({
     x: direction > 0 ? '-100%' : '100%',
     opacity: 0,
     transition: {
-      type: 'tween',
       duration: 0.3,
-      ease: [0.4, 0, 0.2, 1],
+      ease: easeInOut
     },
   }),
 };
@@ -48,40 +41,46 @@ const pageVariants = {
 // Main App content component
 const AppContent: React.FC = () => {
   const location = useLocation();
-  const [direction, setDirection] = useState(1);
-  const [prevPath, setPrevPath] = useState(location.pathname);
+  const navigate = useNavigate();
+  const prevPathRef = useRef(location.pathname);
+
+  const direction = useMemo(() => {
+    const prevPath = prevPathRef.current;
+    if (prevPath === '/' && location.pathname.startsWith('/project')) {
+      return 1; // Forward: right to left
+    } else if (prevPath.startsWith('/project') && location.pathname === '/') {
+      return -1; // Back: left to right
+    }
+    return 0;
+  }, [location.pathname]);
 
   useEffect(() => {
-    // Determine direction based on navigation
-    if (prevPath === '/' && location.pathname.startsWith('/project')) {
-      setDirection(1); // Forward: right to left
-    } else if (prevPath.startsWith('/project') && location.pathname === '/') {
-      setDirection(-1); // Back: left to right
-    }
-    setPrevPath(location.pathname);
+    prevPathRef.current = location.pathname;
+  }, [location.pathname]);
+
+  useEffect(() => {
+    // Scroll to top on route change
+    window.scrollTo(0, 0);
   }, [location.pathname]);
 
   // Check for reduced motion preference
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   return (
-    <div className="bg-gray-50 text-black min-h-screen font-sans flex justify-center">
-      <div className="relative w-full max-w-screen-lg bg-white md:border md:border-gray-200 md:shadow-lg overflow-hidden">
-        <AppHeader />
+    <div className="bg-white text-black min-h-screen font-sans flex justify-center">
+      <div className="relative w-full max-w-[1200px] bg-white md:border md:border-gray-200 md:shadow-lg overflow-hidden">
+        {/* Navbar hidden for coming soon */}
         <AnimatePresence mode="wait" initial={false} custom={direction}>
           <motion.main
             key={location.pathname}
             custom={direction}
-            variants={prefersReducedMotion ? {} : pageVariants}
+            variants={prefersReducedMotion ? undefined : pageVariants}
             initial="initial"
             animate="animate"
             exit="exit"
-            className="w-full"
+            className="w-full pt-24"
           >
-            <Routes location={location}>
-              <Route path="/" element={<HomePage />} />
-              <Route path="/project/:id" element={<ProjectPage />} />
-            </Routes>
+            <ComingSoon />
           </motion.main>
         </AnimatePresence>
       </div>

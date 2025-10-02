@@ -25,7 +25,7 @@ export const AnimatedSliderText: React.FC<AnimatedSliderTextProps> = ({ heading,
     const lowerTitle = heading.toLowerCase();
     const highlightedWords = new Set<string>();
 
-    const keywords = ["dual-minded", "translation-gap"];
+    const keywords = ["dual-minded", "translation-gap", "automatic", "solution", "quickly"];
 
     keywords.forEach(keyword => {
       if (lowerTitle.includes(keyword)) {

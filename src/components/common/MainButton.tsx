@@ -8,7 +8,7 @@ interface MainButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> 
 
 const MainButton: React.FC<MainButtonProps> = ({ className = "", children, ...rest }) => {
   const baseClasses =
-    "inline-block text-white bg-black hover:bg-gray-800 text-sm py-3 px-5 uppercase border border-transparent w-[160px] text-center";
+    "w-full sm:w-[160px] inline-block text-white bg-black hover:bg-gray-800 text-sm py-3 px-5 uppercase border border-transparent text-center";
   return (
     <a
       href="/book-a-call"

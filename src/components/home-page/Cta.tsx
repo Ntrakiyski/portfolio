@@ -11,20 +11,20 @@ const Cta = () => {
           <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
             Get in touch with me today and let's discuss how I can help bring your ideas to life.
           </p>
-          <div className="flex flex-col sm:flex-row gap-2 mt-6">
-            <a 
-              href="mailto:nikolay.trakiyski@gmail.com" 
-              className="inline-flex items-center justify-center px-6 py-3 bg-white text-black font-medium transition-opacity hover:opacity-75 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50"
+          <div className="w-full flex flex-col sm:flex-row gap-4 mt-8 items-center justify-center">
+            <a
+              href="mailto:nikolay.trakiyski@gmail.com"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 bg-white text-black font-medium text-sm uppercase text-center transition-opacity hover:opacity-75 focus:outline-none focus:ring-2 focus:ring-black focus:ring-opacity-50 border border-transparent"
             >
               Contact Me
             </a>
-            <a 
-              href="/cv/nikolay-trakiyski-cv.pdf" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 bg-gray-800 text-white font-medium transition-opacity hover:opacity-75 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 border border-gray-700"
+            <a
+              data-cal-namespace="free-call"
+              data-cal-link="trakiyski/free-call"
+              data-cal-config='{"layout":"month_view"}'
+              className="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 bg-black text-white font-medium text-sm uppercase text-center transition-opacity hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-white focus:ring-opacity-50 border border-transparent cursor-pointer"
             >
-              Download CV
+              Book Free Call
             </a>
           </div>
         </div>

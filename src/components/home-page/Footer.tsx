@@ -36,18 +36,10 @@ const Footer = () => {
                 {item.name}
               </a>
             ))}
-            <a 
-              href="/cv/nikolay-trakiyski-cv.pdf"
-              className="inline-flex items-center text-gray-600 hover:text-black text-sm font-medium transition-colors"
-              target="_blank" 
-              rel="noopener noreferrer"
-            >
-              CV <ArrowUpRight className="size-3 ml-1" />
-            </a>
-            <a 
+            <a
               href="https://linkedin.com/in/nikolaytrakiyski"
               className="inline-flex items-center text-gray-600 hover:text-black text-sm font-medium transition-colors"
-              target="_blank" 
+              target="_blank"
               rel="noopener noreferrer"
             >
               LinkedIn <ArrowUpRight className="size-3 ml-1" />

@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { SectionWrapper, CategoryBadge } from '../common';
 import SectionTitle from './SectionTitle';
 import SecondaryButton from '../common/SecondaryButton';
@@ -63,7 +64,7 @@ const ProjectCards = () => {
   });
 
   return (
-    <SectionWrapper id="projects" className="py-24 sm:py-32 bg-gray-50">
+    <SectionWrapper id="projects" className="py-24 sm:py-32 bg-white">
       <div className="mx-auto max-w-screen-lg px-4 lg:px-8 text-left">
         <SectionTitle 
           tag={projectsContent.tag}
@@ -74,28 +75,24 @@ const ProjectCards = () => {
       <div className="mx-auto max-w-screen-lg px-4 lg:px-8 mt-16">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {sortedProjects.map((project, index) => (
-            <div 
-              key={index} 
-              ref={(el) => cardsRef.current[index] = el}
-              className={`group flex flex-col border shadow-sm overflow-hidden bg-white hover:shadow-lg transition-all duration-300 ${
-                project.featured 
-                  ? 'md:col-span-2 border-purple-300 border-2 ring-2 ring-purple-100' 
+            <Link
+              key={index}
+              to={`/project/${project.id}`}
+              className={`group flex flex-col border shadow-sm overflow-hidden bg-white transition-all duration-300 ${
+                project.featured
+                  ? 'md:col-span-2'
                   : 'border-gray-200'
               }`}
             >
-              {project.featured && (
-                <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-2 text-sm font-semibold">
-                  ⭐ Featured Project
-                </div>
-              )}
-              <div className={`p-6 flex-grow flex flex-col ${project.featured ? 'md:flex-row md:gap-8' : ''}`}>
-                <div className={`mb-4 ${project.featured ? 'md:w-1/2 md:mb-0' : ''}`}>
-                  <img 
-                    src={`https://picsum.photos/seed/${project.id}/800/400`}
-                    alt={project.title} 
-                    className={`w-full object-cover ${
-                      project.featured ? 'h-64 md:h-full' : 'h-48'
-                    }`}
+              <div
+                ref={(el) => { cardsRef.current[index] = el }}
+                className={`p-6 flex-grow flex flex-col h-full ${project.featured ? 'md:flex-row md:gap-8' : ''}`}
+              >
+                <div className={`mb-4 ${project.featured ? 'md:w-1/2 md:mb-0 md:h-full md:flex md:items-center md:justify-center' : 'h-64 flex items-center justify-center'}`}>
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
                   />
                 </div>
                 <div className={`flex flex-col flex-grow ${project.featured ? 'md:w-1/2' : ''}`}>
@@ -121,7 +118,7 @@ const ProjectCards = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
@@ -130,4 +127,3 @@ const ProjectCards = () => {
 };
 
 export default ProjectCards;
-
